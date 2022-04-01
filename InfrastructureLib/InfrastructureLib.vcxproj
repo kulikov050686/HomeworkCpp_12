@@ -152,13 +152,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GameField.h" />
+    <ClInclude Include="GameMap.h" />
     <ClInclude Include="IGameField.h" />
+    <ClInclude Include="IGameMap.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Templates.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameField.cpp" />
+    <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

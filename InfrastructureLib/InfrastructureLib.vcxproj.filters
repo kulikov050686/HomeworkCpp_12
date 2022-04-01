@@ -36,12 +36,21 @@
     <ClInclude Include="Point.h">
       <Filter>Structs</Filter>
     </ClInclude>
+    <ClInclude Include="GameMap.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameMap.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="GameField.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMap.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
