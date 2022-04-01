@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "SeaBattle.h"
-#include "Templates.h"
 
 void SeaBattle::Run()
 {

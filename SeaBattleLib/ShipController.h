@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 #include "Ship.h"
-#include "Point.h"
+#include "../InfrastructureLib/Point.h"
 #include "Placement.h"
 #include "Direction.h"
 

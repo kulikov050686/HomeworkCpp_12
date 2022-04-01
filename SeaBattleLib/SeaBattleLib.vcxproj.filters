@@ -42,26 +42,14 @@
     <ClInclude Include="Direction.h">
       <Filter>Enums</Filter>
     </ClInclude>
-    <ClInclude Include="Point.h">
-      <Filter>Structs</Filter>
-    </ClInclude>
     <ClInclude Include="Placement.h">
       <Filter>Enums</Filter>
     </ClInclude>
     <ClInclude Include="Coordinates.h">
       <Filter>Structs</Filter>
     </ClInclude>
-    <ClInclude Include="IGameField.h">
-      <Filter>Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="Templates.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="GameField.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="Ship.h">
       <Filter>Models</Filter>
@@ -88,9 +76,6 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="GameField.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="Ship.cpp">
       <Filter>Models</Filter>

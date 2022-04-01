@@ -1,6 +1,8 @@
 #pragma once
 #include <locale.h>
 #include <memory>
+#include "../InfrastructureLib/GameField.h"
+#include "../InfrastructureLib/Templates.h"
 
 /// <summary>
 /// Игра змейка
@@ -23,4 +25,16 @@ public:
 	/// Деструктор
 	/// </summary>
 	virtual ~SnakeGame() = default;
+
+private:
+
+	/// <summary>
+	/// Запрет присваивания
+	/// </summary>	
+	SnakeGame& operator = (const SnakeGame&) = delete;
+
+	/// <summary>
+	/// Запрет копирования
+	/// </summary>	
+	SnakeGame(const SnakeGame&) = delete;
 };

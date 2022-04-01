@@ -6,6 +6,8 @@
 #include "Game.h"
 #include "GameFieldController.h"
 #include "ShipController.h"
+#include "../InfrastructureLib/GameField.h"
+#include "../InfrastructureLib/Templates.h"
 
 /// <summary>
 /// Морской бой

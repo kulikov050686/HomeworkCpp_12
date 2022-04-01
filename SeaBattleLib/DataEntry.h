@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Point.h"
+#include "../InfrastructureLib/Point.h"
 #include "Direction.h"
 #include "../ConvertLib/Convert.h"
 

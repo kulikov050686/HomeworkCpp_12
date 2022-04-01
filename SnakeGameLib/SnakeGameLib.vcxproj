@@ -164,6 +164,9 @@
     <ClCompile Include="SnakeGame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InfrastructureLib\InfrastructureLib.vcxproj">
+      <Project>{aacfeb0d-3c35-43ca-82e8-bfff5041e84f}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\RandomLib\RandomLib.vcxproj">
       <Project>{0d83ecb9-83f8-489c-af70-1618c722f022}</Project>
     </ProjectReference>

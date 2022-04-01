@@ -2,9 +2,9 @@
 #include <list>
 #include <iterator>
 #include <memory>
-#include "Point.h"
+#include "../InfrastructureLib/Point.h"
 #include "IShip.h"
-#include "IGameField.h"
+#include "../InfrastructureLib/IGameField.h"
 #include "ResultOfShot.h"
 #include "Coordinates.h"
 

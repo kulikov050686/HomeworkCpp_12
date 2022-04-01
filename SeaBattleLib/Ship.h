@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "IShip.h"
-#include "Point.h"
+#include "../InfrastructureLib/Point.h"
 #include "Placement.h"
 #include "Coordinates.h"
 #include "Direction.h"

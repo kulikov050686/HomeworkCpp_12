@@ -1,7 +1,7 @@
 #pragma once
 #include "Placement.h"
 #include "Coordinates.h"
-#include "Point.h"
+#include "../InfrastructureLib/Point.h"
 #include "ResultOfShot.h"
 
 /// <summary>

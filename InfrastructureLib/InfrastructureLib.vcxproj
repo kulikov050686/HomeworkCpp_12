@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0ecb86da-309e-49a0-8921-5bf47894a0bb}</ProjectGuid>
-    <RootNamespace>SeaBattleLib</RootNamespace>
+    <ProjectGuid>{aacfeb0d-3c35-43ca-82e8-bfff5041e84f}</ProjectGuid>
+    <RootNamespace>InfrastructureLib</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,40 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DataEntry.h" />
-    <ClInclude Include="Direction.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameFieldController.h" />
-    <ClInclude Include="IShip.h" />
+    <ClInclude Include="GameField.h" />
+    <ClInclude Include="IGameField.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Placement.h" />
-    <ClInclude Include="ResultOfShot.h" />
-    <ClInclude Include="SeaBattle.h" />
-    <ClInclude Include="Ship.h" />
-    <ClInclude Include="Coordinates.h" />
-    <ClInclude Include="ShipController.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Templates.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DataEntry.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameFieldController.cpp" />
+    <ClCompile Include="GameField.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SeaBattle.cpp" />
-    <ClCompile Include="Ship.cpp" />
-    <ClCompile Include="ShipController.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConvertLib\ConvertLib.vcxproj">
-      <Project>{40613ae6-7acd-43eb-a41f-d205b2294616}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\InfrastructureLib\InfrastructureLib.vcxproj">
-      <Project>{aacfeb0d-3c35-43ca-82e8-bfff5041e84f}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

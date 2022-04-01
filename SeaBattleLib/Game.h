@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <chrono>
 #include <thread>
-#include "Point.h"
+#include "../InfrastructureLib/Point.h"
 #include "Direction.h"
 #include "Ship.h"
 #include "ShipController.h"
