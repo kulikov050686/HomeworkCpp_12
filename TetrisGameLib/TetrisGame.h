@@ -2,26 +2,28 @@
 #include <locale.h>
 #include <memory>
 
-/// <summary>
-/// Игра тетрис
-/// </summary>
-class TetrisGame
+namespace TetrisGameLib
 {
-public:
-
 	/// <summary>
-	/// Конструктор
+	/// Игра тетрис
 	/// </summary>
-	TetrisGame() = default;
+	class TetrisGame
+	{
+	public:
 
-	/// <summary>
-	/// Запуск игры
-	/// </summary>
-	void Run();
+		/// <summary>
+		/// Конструктор
+		/// </summary>
+		TetrisGame() = default;
 
-	/// <summary>
-	/// Деструктор
-	/// </summary>
-	virtual ~TetrisGame() = default;
-};
+		/// <summary>
+		/// Запуск игры
+		/// </summary>
+		void Run();
 
+		/// <summary>
+		/// Деструктор
+		/// </summary>
+		virtual ~TetrisGame() = default;
+	};
+}

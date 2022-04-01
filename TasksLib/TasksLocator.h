@@ -26,7 +26,7 @@ public:
 	/// <summary>
 	/// Задача 1
 	/// </summary>
-	std::shared_ptr<ITask> GetTask1() { return std::make_shared<Task1>(std::make_shared<SnakeGame>()); }
+	std::shared_ptr<ITask> GetTask1() { return std::make_shared<Task1>(std::make_shared<SnakeGameLib::SnakeGame>()); }
 
 	/// <summary>
 	/// Задача 2
@@ -67,7 +67,7 @@ public:
 	/// <summary>
 	/// Задача 8
 	/// </summary>	
-	std::shared_ptr<ITask> GetTask8() { return std::make_shared<Task8>(std::make_shared<TetrisGame>()); }
+	std::shared_ptr<ITask> GetTask8() { return std::make_shared<Task8>(std::make_shared<TetrisGameLib::TetrisGame>()); }
 
 	/// <summary>
 	/// Задача 9

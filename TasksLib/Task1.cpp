@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Task1.h"
 
-Task1::Task1(std::shared_ptr<SnakeGame> snakeGame)
+Task1::Task1(std::shared_ptr<SnakeGameLib::SnakeGame> snakeGame)
 {
 	if (snakeGame == nullptr) throw "Error!!";
 

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Task8.h"
 
-Task8::Task8(std::shared_ptr<TetrisGame> tetrisGame)
+Task8::Task8(std::shared_ptr<TetrisGameLib::TetrisGame> tetrisGame)
 {
 	if (tetrisGame == nullptr) throw "Error!!!";
 

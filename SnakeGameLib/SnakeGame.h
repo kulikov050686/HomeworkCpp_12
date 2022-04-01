@@ -1,40 +1,42 @@
 #pragma once
 #include <locale.h>
 #include <memory>
-#include "../InfrastructureLib/GameField.h"
 #include "../InfrastructureLib/Templates.h"
 
-/// <summary>
-/// Игра змейка
-/// </summary>
-class SnakeGame
+namespace SnakeGameLib
 {
-public:
-	
 	/// <summary>
-	/// Конструктор
+	/// Игра змейка
 	/// </summary>
-	SnakeGame() = default;
+	class SnakeGame
+	{
+	public:
 
-	/// <summary>
-	/// Запуск игры
-	/// </summary>
-	void Run();
+		/// <summary>
+		/// Конструктор
+		/// </summary>
+		SnakeGame() = default;
 
-	/// <summary>
-	/// Деструктор
-	/// </summary>
-	virtual ~SnakeGame() = default;
+		/// <summary>
+		/// Запуск игры
+		/// </summary>
+		void Run();
 
-private:
+		/// <summary>
+		/// Деструктор
+		/// </summary>
+		virtual ~SnakeGame() = default;
 
-	/// <summary>
-	/// Запрет присваивания
-	/// </summary>	
-	SnakeGame& operator = (const SnakeGame&) = delete;
+	private:
 
-	/// <summary>
-	/// Запрет копирования
-	/// </summary>	
-	SnakeGame(const SnakeGame&) = delete;
-};
+		/// <summary>
+		/// Запрет присваивания
+		/// </summary>	
+		SnakeGame& operator = (const SnakeGame&) = delete;
+
+		/// <summary>
+		/// Запрет копирования
+		/// </summary>	
+		SnakeGame(const SnakeGame&) = delete;
+	};
+}

@@ -14,7 +14,7 @@ public:
 	/// <summary>
 	/// Конструктор
 	/// </summary>
-	Task1(std::shared_ptr<SnakeGame> snakeGame);
+	Task1(std::shared_ptr<SnakeGameLib::SnakeGame> snakeGame);
 
 	/// <summary>
 	/// Запуск
@@ -31,5 +31,5 @@ private:
 	/// <summary>
 	/// Игра змейка
 	/// </summary>
-	std::shared_ptr<SnakeGame> _snakeGame;
+	std::shared_ptr<SnakeGameLib::SnakeGame> _snakeGame;
 };

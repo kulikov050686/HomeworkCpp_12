@@ -14,7 +14,7 @@ public:
 	/// <summary>
 	/// Конструктор
 	/// </summary>
-	Task8(std::shared_ptr<TetrisGame> tetrisGame);
+	Task8(std::shared_ptr<TetrisGameLib::TetrisGame> tetrisGame);
 
 	/// <summary>
 	/// Запуск
@@ -31,5 +31,5 @@ private:
 	/// <summary>
 	/// Игра тетрис
 	/// </summary>
-	std::shared_ptr<TetrisGame> _tetrisGame;
+	std::shared_ptr<TetrisGameLib::TetrisGame> _tetrisGame;
 };
