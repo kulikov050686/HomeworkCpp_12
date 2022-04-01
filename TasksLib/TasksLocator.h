@@ -72,7 +72,7 @@ public:
 	/// <summary>
 	/// Задача 9
 	/// </summary>	
-	std::shared_ptr<ITask> GetTask9() { return std::make_shared<Task9>(std::make_shared<SeaBattle>()); }
+	std::shared_ptr<ITask> GetTask9() { return std::make_shared<Task9>(std::make_shared<SeaBattleLib::SeaBattle>()); }
  
 	/// <summary>
 	/// Деструктор

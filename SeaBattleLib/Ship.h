@@ -7,110 +7,113 @@
 #include "Direction.h"
 #include "ResultOfShot.h"
 
-/// <summary>
-/// Модель корабля
-/// </summary>
-class Ship : public IShip
+namespace SeaBattleLib
 {
-public:
-
 	/// <summary>
-	/// Конструктор для однопалубного корабля
+	/// Модель корабля
 	/// </summary>
-	/// <param name="shipCoordinate"> Координаты корабля </param>
-	Ship(Point2D<uint16_t> shipCoordinate);
-	
-	/// <summary>
-	/// Конструктор для многопалубного корабля
-	/// </summary>
-	/// <param name="shipCoordinate"> Координаты корабля </param>
-	/// <param name="numberOfDecks"> Количество палуб у корабля </param>
-	/// <param name="direction"> Направление </param>
-	Ship(Point2D<uint16_t> shipCoordinate, uint16_t numberOfDecks, Direction direction);
+	class Ship : public IShip
+	{
+	public:
 
-	/// <summary>
-	/// Получить размещение
-	/// </summary>	
-	Placement GetPlacement() override;
+		/// <summary>
+		/// Конструктор для однопалубного корабля
+		/// </summary>
+		/// <param name="shipCoordinate"> Координаты корабля </param>
+		Ship(Point2D<uint16_t> shipCoordinate);
 
-	/// <summary>
-	/// Получить количество палуб
-	/// </summary>	
-	uint16_t GetNumberOfDecks() override;
+		/// <summary>
+		/// Конструктор для многопалубного корабля
+		/// </summary>
+		/// <param name="shipCoordinate"> Координаты корабля </param>
+		/// <param name="numberOfDecks"> Количество палуб у корабля </param>
+		/// <param name="direction"> Направление </param>
+		Ship(Point2D<uint16_t> shipCoordinate, uint16_t numberOfDecks, Direction direction);
 
-	/// <summary>
-	/// Получить координаты местоположения
-	/// </summary>	
-	Coordinates<Point2D<int16_t>> GetLocationCoordinates() override;
+		/// <summary>
+		/// Получить размещение
+		/// </summary>	
+		Placement GetPlacement() override;
 
-	/// <summary>
-	/// Получить палубу корабля
-	/// </summary>
-	/// <param name="number"> Номер палубы </param>	
-	uint16_t GetShipDeck(uint16_t number) override;
+		/// <summary>
+		/// Получить количество палуб
+		/// </summary>	
+		uint16_t GetNumberOfDecks() override;
 
-	/// <summary>
-	/// Получить принадлежность точки кораблю
-	/// </summary>
-	/// <param name="point"> Точка </param>
-	bool GetPointBelongingToShip(Point2D<uint16_t> point) override;
+		/// <summary>
+		/// Получить координаты местоположения
+		/// </summary>	
+		Coordinates<Point2D<int16_t>> GetLocationCoordinates() override;
 
-	/// <summary>
-	/// Нападение на корабль
-	/// </summary>
-	/// <param name="point"> Точка </param>	
-	ResultOfShot AttackOnShip(Point2D<uint16_t> point) override;
+		/// <summary>
+		/// Получить палубу корабля
+		/// </summary>
+		/// <param name="number"> Номер палубы </param>	
+		uint16_t GetShipDeck(uint16_t number) override;
 
-	/// <summary>
-	/// Получить количество попаданий
-	/// </summary>
-	uint16_t GetNumberOfHits() override;
+		/// <summary>
+		/// Получить принадлежность точки кораблю
+		/// </summary>
+		/// <param name="point"> Точка </param>
+		bool GetPointBelongingToShip(Point2D<uint16_t> point) override;
 
-	/// <summary>
-	/// Деструктор
-	/// </summary>
-	virtual ~Ship() = default;
+		/// <summary>
+		/// Нападение на корабль
+		/// </summary>
+		/// <param name="point"> Точка </param>	
+		ResultOfShot AttackOnShip(Point2D<uint16_t> point) override;
 
-private:
+		/// <summary>
+		/// Получить количество попаданий
+		/// </summary>
+		uint16_t GetNumberOfHits() override;
 
-	/// <summary>
-	/// Координаты корабля
-	/// </summary>
-	Coordinates<Point2D<int16_t>> _shipCoordinate{ 0, 0, 0, 0 };
+		/// <summary>
+		/// Деструктор
+		/// </summary>
+		virtual ~Ship() = default;
 
-	/// <summary>
-	/// Направление
-	/// </summary>
-	Direction _direction = Direction::RIGHT;
+	private:
 
-	/// <summary>
-	/// Размещение
-	/// </summary>
-	Placement _placement = Placement::HORIZONTALLY;
+		/// <summary>
+		/// Координаты корабля
+		/// </summary>
+		Coordinates<Point2D<int16_t>> _shipCoordinate{ 0, 0, 0, 0 };
 
-	/// <summary>
-	/// Количество палуб у корабля
-	/// </summary>
-	uint16_t _numberOfDecks = 1;
+		/// <summary>
+		/// Направление
+		/// </summary>
+		Direction _direction = Direction::RIGHT;
 
-	/// <summary>
-	/// Количество попаданий
-	/// </summary>
-	uint16_t _numberOfHits = 0;
+		/// <summary>
+		/// Размещение
+		/// </summary>
+		Placement _placement = Placement::HORIZONTALLY;
 
-	/// <summary>
-	/// Корабль
-	/// </summary>
-	std::vector<uint16_t> _ship;
+		/// <summary>
+		/// Количество палуб у корабля
+		/// </summary>
+		uint16_t _numberOfDecks = 1;
 
-	/// <summary>
-	/// Создать корабль
-	/// </summary>
-	void CreateShip();
+		/// <summary>
+		/// Количество попаданий
+		/// </summary>
+		uint16_t _numberOfHits = 0;
 
-	/// <summary>
-	/// Создать координаты корабля
-	/// </summary>
-	/// <param name="shipCoordinate"> Координаты отсчёта </param>
-	void CreateShipCoordinate(Point2D<uint16_t> shipCoordinate);
-};
+		/// <summary>
+		/// Корабль
+		/// </summary>
+		std::vector<uint16_t> _ship;
+
+		/// <summary>
+		/// Создать корабль
+		/// </summary>
+		void CreateShip();
+
+		/// <summary>
+		/// Создать координаты корабля
+		/// </summary>
+		/// <param name="shipCoordinate"> Координаты отсчёта </param>
+		void CreateShipCoordinate(Point2D<uint16_t> shipCoordinate);
+	};
+}

@@ -1,17 +1,20 @@
 #pragma once
 
-/// <summary>
-/// Размещение
-/// </summary>
-enum class Placement
+namespace SeaBattleLib
 {
 	/// <summary>
-	/// Горизонтально
+	/// Размещение
 	/// </summary>
-	HORIZONTALLY = 0,
+	enum class Placement
+	{
+		/// <summary>
+		/// Горизонтально
+		/// </summary>
+		HORIZONTALLY = 0,
 
-	/// <summary>
-	/// Вертикально
-	/// </summary>
-	VERTICALLY = 1	
-};
+		/// <summary>
+		/// Вертикально
+		/// </summary>
+		VERTICALLY = 1
+	};
+}

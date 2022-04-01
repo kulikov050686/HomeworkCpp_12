@@ -14,7 +14,7 @@ public:
 	/// <summary>
 	/// Конструктор
 	/// </summary>
-	Task9(std::shared_ptr<SeaBattle> seaBattle);
+	Task9(std::shared_ptr<SeaBattleLib::SeaBattle> seaBattle);
 
 	/// <summary>
 	/// Запуск
@@ -31,5 +31,5 @@ private:
 	/// <summary>
 	/// Игра морской бой
 	/// </summary>
-	std::shared_ptr<SeaBattle> _seaBattle;
+	std::shared_ptr<SeaBattleLib::SeaBattle> _seaBattle;
 };

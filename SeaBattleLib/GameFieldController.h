@@ -8,122 +8,125 @@
 #include "ResultOfShot.h"
 #include "Coordinates.h"
 
-/// <summary>
-/// Контроллер игрового поля
-/// </summary>
-class GameFieldController
+namespace SeaBattleLib
 {
-public:
-
 	/// <summary>
-	/// Конструктор
+	/// Контроллер игрового поля
 	/// </summary>
-	/// <param name="field"> Игровое поле </param>
-	GameFieldController(std::shared_ptr<IGameField<uint16_t>> field);
+	class GameFieldController
+	{
+	public:
 
-	/// <summary>
-	/// Добавить корабль на игровое поле
-	/// </summary>
-	/// <param name="ship"> Корабль </param>
-	bool AddShipOnField(std::shared_ptr<IShip> ship);
+		/// <summary>
+		/// Конструктор
+		/// </summary>
+		/// <param name="field"> Игровое поле </param>
+		GameFieldController(std::shared_ptr<IGameField<uint16_t>> field);
 
-	/// <summary>
-	/// Получить размер игрового поля
-	/// </summary>
-	uint16_t GetSizeField();
+		/// <summary>
+		/// Добавить корабль на игровое поле
+		/// </summary>
+		/// <param name="ship"> Корабль </param>
+		bool AddShipOnField(std::shared_ptr<IShip> ship);
 
-	/// <summary>
-	/// Очистить игровое поле
-	/// </summary>
-	void ClearField();
+		/// <summary>
+		/// Получить размер игрового поля
+		/// </summary>
+		uint16_t GetSizeField();
 
-	/// <summary>
-	/// Задать элемент игрового поля
-	/// </summary>
-	/// <param name="point"> Точка игрового поля </param>
-	/// <param name="data"> Данные </param>
-	void SetFieldElement(Point2D<uint16_t> point, uint16_t data);
+		/// <summary>
+		/// Очистить игровое поле
+		/// </summary>
+		void ClearField();
 
-	/// <summary>
-	/// Получить элемент игрового поля
-	/// </summary>
-	/// <param name="point"> Точка игрового поля </param>
-	uint16_t GetFieldElement(Point2D<uint16_t> point);
+		/// <summary>
+		/// Задать элемент игрового поля
+		/// </summary>
+		/// <param name="point"> Точка игрового поля </param>
+		/// <param name="data"> Данные </param>
+		void SetFieldElement(Point2D<uint16_t> point, uint16_t data);
 
-	/// <summary>
-	/// Выстрел по кораблю
-	/// </summary>
-	/// <param name="pointOfShot"> Точка встрела </param>
-	ResultOfShot ShootAtShip(Point2D<uint16_t> pointOfShot);
-	
-	/// <summary>
-	/// Количество кораблей на игровом поле
-	/// </summary>	
-	size_t NumberOfShipsOnField();
+		/// <summary>
+		/// Получить элемент игрового поля
+		/// </summary>
+		/// <param name="point"> Точка игрового поля </param>
+		uint16_t GetFieldElement(Point2D<uint16_t> point);
 
-	/// <summary>
-	/// Отсутствие кораблей на игровом поле
-	/// </summary>	
-	bool NoShipsOnField();
+		/// <summary>
+		/// Выстрел по кораблю
+		/// </summary>
+		/// <param name="pointOfShot"> Точка встрела </param>
+		ResultOfShot ShootAtShip(Point2D<uint16_t> pointOfShot);
 
-	/// <summary>
-	/// Получить координаты затонувшего корабля
-	/// </summary>	
-	Coordinates<Point2D<int16_t>> GetCoordinatesOfSunkenShip();
+		/// <summary>
+		/// Количество кораблей на игровом поле
+		/// </summary>	
+		size_t NumberOfShipsOnField();
 
-	/// <summary>
-	/// Деструктор
-	/// </summary>
-	virtual ~GameFieldController() = default;
-	
-private:
+		/// <summary>
+		/// Отсутствие кораблей на игровом поле
+		/// </summary>	
+		bool NoShipsOnField();
 
-	/// <summary>
-	/// Размер игрового поля
-	/// </summary>
-	uint16_t _sizeField = 0;
+		/// <summary>
+		/// Получить координаты затонувшего корабля
+		/// </summary>	
+		Coordinates<Point2D<int16_t>> GetCoordinatesOfSunkenShip();
 
-	/// <summary>
-	/// Игровое поле
-	/// </summary>
-	std::shared_ptr<IGameField<uint16_t>> _field;
+		/// <summary>
+		/// Деструктор
+		/// </summary>
+		virtual ~GameFieldController() = default;
 
-	/// <summary>
-	/// Список кораблей
-	/// </summary>
-	std::list<std::shared_ptr<IShip>> _listShips;
+	private:
 
-	/// <summary>
-	/// Координаты затонувшего корабля
-	/// </summary>
-	Coordinates<Point2D<int16_t>> _coordinatesOfSunkenShip{ -1,-1,-1,-1 };
+		/// <summary>
+		/// Размер игрового поля
+		/// </summary>
+		uint16_t _sizeField = 0;
 
-	/// <summary>
-	/// Проверка выхода за границы
-	/// </summary>
-	/// <param name="ship"> Корабль </param>
-	bool CheckingBoundaries(std::shared_ptr<IShip> ship);
+		/// <summary>
+		/// Игровое поле
+		/// </summary>
+		std::shared_ptr<IGameField<uint16_t>> _field;
 
-	/// <summary>
-	/// Проверка столкновений кораблей
-	/// </summary>
-	/// <param name="ship"> Корабль </param>
-	bool CollisionChecking(std::shared_ptr<IShip> ship);
+		/// <summary>
+		/// Список кораблей
+		/// </summary>
+		std::list<std::shared_ptr<IShip>> _listShips;
 
-	/// <summary>
-	/// Результат атаки
-	/// </summary>
-	/// <param name="point"> Точка атаки </param>
-	/// <param name="numberOfDecks"> Количество палуб </param>	
-	ResultOfShot ResultOfAttack(Point2D<uint16_t> point, uint16_t numberOfDecks);
+		/// <summary>
+		/// Координаты затонувшего корабля
+		/// </summary>
+		Coordinates<Point2D<int16_t>> _coordinatesOfSunkenShip{ -1,-1,-1,-1 };
 
-	/// <summary>
-	/// Запрет присваивания
-	/// </summary>
-	GameFieldController& operator = (const GameFieldController&) = delete;
+		/// <summary>
+		/// Проверка выхода за границы
+		/// </summary>
+		/// <param name="ship"> Корабль </param>
+		bool CheckingBoundaries(std::shared_ptr<IShip> ship);
 
-	/// <summary>
-	/// Запрет копирования
-	/// </summary>
-	GameFieldController(const GameFieldController&) = delete;
-};
+		/// <summary>
+		/// Проверка столкновений кораблей
+		/// </summary>
+		/// <param name="ship"> Корабль </param>
+		bool CollisionChecking(std::shared_ptr<IShip> ship);
+
+		/// <summary>
+		/// Результат атаки
+		/// </summary>
+		/// <param name="point"> Точка атаки </param>
+		/// <param name="numberOfDecks"> Количество палуб </param>	
+		ResultOfShot ResultOfAttack(Point2D<uint16_t> point, uint16_t numberOfDecks);
+
+		/// <summary>
+		/// Запрет присваивания
+		/// </summary>
+		GameFieldController& operator = (const GameFieldController&) = delete;
+
+		/// <summary>
+		/// Запрет копирования
+		/// </summary>
+		GameFieldController(const GameFieldController&) = delete;
+	};
+}

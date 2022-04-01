@@ -1,22 +1,25 @@
 #pragma once
 
-/// <summary>
-/// Результат выстрела
-/// </summary>
-enum class ResultOfShot
+namespace SeaBattleLib
 {
 	/// <summary>
-	/// Промахнулся
+	/// Результат выстрела
 	/// </summary>
-	MISSED = 0,
+	enum class ResultOfShot
+	{
+		/// <summary>
+		/// Промахнулся
+		/// </summary>
+		MISSED = 0,
 
-	/// <summary>
-	/// Ранил
-	/// </summary>
-	WOUNDED = 1,
+		/// <summary>
+		/// Ранил
+		/// </summary>
+		WOUNDED = 1,
 
-	/// <summary>
-	/// Убил
-	/// </summary>
-	KILLED = 2
-};
+		/// <summary>
+		/// Убил
+		/// </summary>
+		KILLED = 2
+	};
+}

@@ -8,42 +8,45 @@
 #include "ShipController.h"
 #include "../InfrastructureLib/Templates.h"
 
-/// <summary>
-/// Морской бой
-/// </summary>
-class SeaBattle
+namespace SeaBattleLib
 {
-public:
-
 	/// <summary>
-	/// Конструктор
+	/// Морской бой
 	/// </summary>
-	SeaBattle() = default;
+	class SeaBattle
+	{
+	public:
 
-	/// <summary>
-	/// Запуск
-	/// </summary>
-	void Run();
+		/// <summary>
+		/// Конструктор
+		/// </summary>
+		SeaBattle() = default;
 
-	/// <summary>
-	/// Деструктор
-	/// </summary>
-	virtual ~SeaBattle() = default;
+		/// <summary>
+		/// Запуск
+		/// </summary>
+		void Run();
 
-private:
+		/// <summary>
+		/// Деструктор
+		/// </summary>
+		virtual ~SeaBattle() = default;
 
-	/// <summary>
-	/// Начальная заставка экрана
-	/// </summary>
-	void StartScreenSaver();
-		
-	/// <summary>
-	/// Запрет присваивания
-	/// </summary>	
-	SeaBattle& operator = (const SeaBattle&) = delete;
+	private:
 
-	/// <summary>
-	/// Запрет копирования
-	/// </summary>	
-	SeaBattle(const SeaBattle&) = delete;
-};
+		/// <summary>
+		/// Начальная заставка экрана
+		/// </summary>
+		void StartScreenSaver();
+
+		/// <summary>
+		/// Запрет присваивания
+		/// </summary>	
+		SeaBattle& operator = (const SeaBattle&) = delete;
+
+		/// <summary>
+		/// Запрет копирования
+		/// </summary>	
+		SeaBattle(const SeaBattle&) = delete;
+	};
+}

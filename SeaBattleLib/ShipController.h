@@ -5,48 +5,51 @@
 #include "Placement.h"
 #include "Direction.h"
 
-/// <summary>
-/// Контроллер корабля
-/// </summary>
-class ShipController
+namespace SeaBattleLib
 {
-public:
-
 	/// <summary>
-	/// Конструктор
+	/// Контроллер корабля
 	/// </summary>
-	ShipController() = default;
+	class ShipController
+	{
+	public:
 
-	/// <summary>
-	/// Создать однопалубный корабль
-	/// </summary>
-	/// <param name="shipCoordinate"> Координаты корабля </param>	
-	std::shared_ptr<IShip> CreateShip(Point2D<uint16_t> shipCoordinate);
+		/// <summary>
+		/// Конструктор
+		/// </summary>
+		ShipController() = default;
 
-	/// <summary>
-	/// Создать многопалубный корабль
-	/// </summary>
-	/// <param name="shipCoordinate"> Координаты корабля </param>
-	/// <param name="numberOfDecks"> Количество палуб у корабля </param>
-	/// <param name="direction"> Направление </param>	
-	std::shared_ptr<IShip> CreateShip(Point2D<uint16_t> shipCoordinate, 
-									  uint16_t numberOfDecks, 
-									  Direction direction);
+		/// <summary>
+		/// Создать однопалубный корабль
+		/// </summary>
+		/// <param name="shipCoordinate"> Координаты корабля </param>	
+		std::shared_ptr<IShip> CreateShip(Point2D<uint16_t> shipCoordinate);
 
-	/// <summary>
-	/// Деструктор
-	/// </summary>
-	virtual ~ShipController() = default;
+		/// <summary>
+		/// Создать многопалубный корабль
+		/// </summary>
+		/// <param name="shipCoordinate"> Координаты корабля </param>
+		/// <param name="numberOfDecks"> Количество палуб у корабля </param>
+		/// <param name="direction"> Направление </param>	
+		std::shared_ptr<IShip> CreateShip(Point2D<uint16_t> shipCoordinate,
+			uint16_t numberOfDecks,
+			Direction direction);
 
-private:
+		/// <summary>
+		/// Деструктор
+		/// </summary>
+		virtual ~ShipController() = default;
 
-	/// <summary>
-	/// Запрет присваивания
-	/// </summary>	
-	ShipController& operator = (const ShipController&) = delete;
+	private:
 
-	/// <summary>
-	/// Запрет копирования
-	/// </summary>	
-	ShipController(const ShipController&) = delete;
-};
+		/// <summary>
+		/// Запрет присваивания
+		/// </summary>	
+		ShipController& operator = (const ShipController&) = delete;
+
+		/// <summary>
+		/// Запрет копирования
+		/// </summary>	
+		ShipController(const ShipController&) = delete;
+	};
+}
