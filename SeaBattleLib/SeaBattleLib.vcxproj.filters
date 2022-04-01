@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{c54557d8-4637-4788-bd41-10b74255c16c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enums">
+      <UniqueIdentifier>{b8e7a75c-c2d9-44d3-b9f3-2f9bb0adc387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Structs">
+      <UniqueIdentifier>{7cf46044-913c-4223-9782-8e1baf821a1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{72c43ed4-006c-4168-895e-5bd5a3bfe2fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{22e90a3e-1c0f-4cc7-b4e8-fdb6889c7f38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="SeaBattle.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="IShip.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Placement.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinates.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameField.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Templates.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameField.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Ship.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFieldController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ShipController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntry.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultOfShot.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="SeaBattle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="GameField.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Ship.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFieldController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ShipController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntry.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
