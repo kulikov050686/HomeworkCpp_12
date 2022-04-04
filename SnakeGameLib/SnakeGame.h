@@ -6,36 +6,36 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Игра змейка
+	/// РРіСЂР° Р·РјРµР№РєР°
 	/// </summary>
 	class SnakeGame
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		SnakeGame() = default;
 
 		/// <summary>
-		/// Запуск игры
+		/// Р—Р°РїСѓСЃРє РёРіСЂС‹
 		/// </summary>
 		void Run();
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~SnakeGame() = default;
 
 	private:
 
 		/// <summary>
-		/// Запрет присваивания
+		/// Р—Р°РїСЂРµС‚ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 		/// </summary>	
 		SnakeGame& operator = (const SnakeGame&) = delete;
 
 		/// <summary>
-		/// Запрет копирования
+		/// Р—Р°РїСЂРµС‚ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 		/// </summary>	
 		SnakeGame(const SnakeGame&) = delete;
 	};

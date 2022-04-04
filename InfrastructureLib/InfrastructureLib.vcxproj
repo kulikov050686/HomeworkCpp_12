@@ -154,6 +154,7 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="GameField.h" />
     <ClInclude Include="GameMap.h" />
+    <ClInclude Include="IConverter.h" />
     <ClInclude Include="IGameField.h" />
     <ClInclude Include="IGameMap.h" />
     <ClInclude Include="pch.h" />

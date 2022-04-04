@@ -16,6 +16,15 @@
     <Filter Include="Controllers">
       <UniqueIdentifier>{2ce2bac2-23ac-43c4-ba32-3f524dfc9bef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{40674324-75b0-4152-96f8-97a79f9d4cf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enums">
+      <UniqueIdentifier>{e235a11c-388c-49d7-8772-e0aa81343ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{7f5e8aeb-30ba-49e0-af68-1c12a737c901}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -30,6 +39,18 @@
     <ClInclude Include="Game.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="IFruit.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeOfFruit.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Fruit.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="FruitController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -43,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Fruit.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="FruitController.cpp">
+      <Filter>Controllers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -7,33 +7,48 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Класс игра
+	/// РљР»Р°СЃСЃ РёРіСЂР°
 	/// </summary>
 	class Game
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
-		/// <param name="gameFieldController"> Конструктор игрового поля </param>
+		/// <param name="gameFieldController"> РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ </param>
 		Game(std::shared_ptr<GameFieldController> gameFieldController);
 
 		/// <summary>
-		/// Старт игры
+		/// РЎС‚Р°СЂС‚ РёРіСЂС‹
 		/// </summary>
 		void Start();
 
 		/// <summary>
-		/// Дестуктор
+		/// Р”РµСЃС‚СѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~Game() = default;
 
 	private:
 
 		/// <summary>
-		/// Контроллер игрового поля
+		/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 		/// </summary>
 		std::shared_ptr<GameFieldController> _gameFieldController;
+
+		/// <summary>
+		/// РџРµС‡Р°С‚СЊ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
+		/// </summary>		
+		void Print();
+
+		/// <summary>
+		/// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
+		/// </summary>		
+		void Init();
+
+		/// <summary>
+		/// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
+		/// </summary>
+		void InitGameField();
 	};
 }

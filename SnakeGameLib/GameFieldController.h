@@ -6,50 +6,50 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Контроллер игрового поля
+	/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 	/// </summary>
 	class GameFieldController
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
-		/// <param name="field"> Игровое поле </param>
+		/// <param name="field"> РРіСЂРѕРІРѕРµ РїРѕР»Рµ </param>
 		GameFieldController(std::shared_ptr<IGameField<uint16_t>> field);
 
 		/// <summary>
-		/// Получить размер игрового поля
+		/// РџРѕР»СѓС‡РёС‚СЊ СЂР°Р·РјРµСЂ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 		/// </summary>
 		uint16_t GetSizeField();
 
 		/// <summary>
-		/// Очистить игровое поле
+		/// РћС‡РёСЃС‚РёС‚СЊ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		/// </summary>
 		void ClearField();
 
 		/// <summary>
-		/// Задать элемент игрового поля
+		/// Р—Р°РґР°С‚СЊ СЌР»РµРјРµРЅС‚ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 		/// </summary>
-		/// <param name="point"> Точка игрового поля </param>
-		/// <param name="data"> Данные </param>
+		/// <param name="point"> РўРѕС‡РєР° РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ </param>
+		/// <param name="data"> Р”Р°РЅРЅС‹Рµ </param>
 		void SetFieldElement(Point2D<uint16_t> point, uint16_t data);
 
 		/// <summary>
-		/// Получить элемент игрового поля
+		/// РџРѕР»СѓС‡РёС‚СЊ СЌР»РµРјРµРЅС‚ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 		/// </summary>
-		/// <param name="point"> Точка игрового поля </param>
+		/// <param name="point"> РўРѕС‡РєР° РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ </param>
 		uint16_t GetFieldElement(Point2D<uint16_t> point);
 
 	private:
 
 		/// <summary>
-		/// Игровое поле
+		/// РРіСЂРѕРІРѕРµ РїРѕР»Рµ
 		/// </summary>
 		std::shared_ptr<IGameField<uint16_t>> _field;
 
 		/// <summary>
-		/// Размер игрового поля
+		/// Р Р°Р·РјРµСЂ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 		/// </summary>
 		size_t _sizeField;
 	};

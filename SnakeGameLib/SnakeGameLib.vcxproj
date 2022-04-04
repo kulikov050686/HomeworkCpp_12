@@ -151,12 +151,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Fruit.h" />
+    <ClInclude Include="FruitController.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameFieldController.h" />
+    <ClInclude Include="IFruit.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SnakeGame.h" />
+    <ClInclude Include="TypeOfFruit.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Fruit.cpp" />
+    <ClCompile Include="FruitController.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameFieldController.cpp" />
     <ClCompile Include="pch.cpp">

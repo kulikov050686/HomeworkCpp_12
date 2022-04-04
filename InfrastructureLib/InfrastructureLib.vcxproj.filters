@@ -48,6 +48,9 @@
     <ClInclude Include="Direction.h">
       <Filter>Enums</Filter>
     </ClInclude>
+    <ClInclude Include="IConverter.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
