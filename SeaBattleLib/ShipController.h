@@ -3,7 +3,7 @@
 #include "Ship.h"
 #include "../InfrastructureLib/Point.h"
 #include "Placement.h"
-#include "Direction.h"
+#include "../InfrastructureLib/Direction.h"
 
 namespace SeaBattleLib
 {
@@ -32,8 +32,8 @@ namespace SeaBattleLib
 		/// <param name="numberOfDecks"> Количество палуб у корабля </param>
 		/// <param name="direction"> Направление </param>	
 		std::shared_ptr<IShip> CreateShip(Point2D<uint16_t> shipCoordinate,
-			uint16_t numberOfDecks,
-			Direction direction);
+										  uint16_t numberOfDecks,
+										  Direction direction);
 
 		/// <summary>
 		/// Деструктор

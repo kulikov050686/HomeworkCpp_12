@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "../InfrastructureLib/Point.h"
-#include "Direction.h"
+#include "../InfrastructureLib/Direction.h"
 #include "../ConvertLib/Convert.h"
 
 namespace SeaBattleLib

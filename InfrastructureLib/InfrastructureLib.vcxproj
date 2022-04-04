@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Direction.h" />
     <ClInclude Include="GameField.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="IGameField.h" />

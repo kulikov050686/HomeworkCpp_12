@@ -152,7 +152,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DataEntry.h" />
-    <ClInclude Include="Direction.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameFieldController.h" />
     <ClInclude Include="IShip.h" />

@@ -1,19 +1,22 @@
 #pragma once
 
-/// <summary>
-/// Координаты
-/// </summary>
-/// <typeparam name="T"> Тип данных координат </typeparam>
-template <typename T>
-struct Coordinates
+namespace SeaBattleLib
 {
 	/// <summary>
-	/// Координаты начала
+	/// Координаты
 	/// </summary>
-	T beginning;
+	/// <typeparam name="T"> Тип данных координат </typeparam>
+	template <typename T>
+	struct Coordinates
+	{
+		/// <summary>
+		/// Координаты начала
+		/// </summary>
+		T beginning;
 
-	/// <summary>
-	/// Координаты конца
-	/// </summary>
-	T end;
-};
+		/// <summary>
+		/// Координаты конца
+		/// </summary>
+		T end;
+	};
+}

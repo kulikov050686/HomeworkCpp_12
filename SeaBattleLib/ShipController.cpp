@@ -9,8 +9,8 @@ namespace SeaBattleLib
 	}
 
 	std::shared_ptr<IShip> ShipController::CreateShip(Point2D<uint16_t> shipCoordinate,
-		uint16_t numberOfDecks,
-		Direction direction)
+													  uint16_t numberOfDecks,
+													  Direction direction)
 	{
 		if (numberOfDecks == 0) throw "Error!!!";
 

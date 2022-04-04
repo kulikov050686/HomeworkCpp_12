@@ -4,7 +4,7 @@
 #include "../InfrastructureLib/Point.h"
 #include "Placement.h"
 #include "Coordinates.h"
-#include "Direction.h"
+#include "../InfrastructureLib/Direction.h"
 #include "ResultOfShot.h"
 
 namespace SeaBattleLib

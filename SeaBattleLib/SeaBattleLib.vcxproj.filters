@@ -39,9 +39,6 @@
     <ClInclude Include="IShip.h">
       <Filter>Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="Direction.h">
-      <Filter>Enums</Filter>
-    </ClInclude>
     <ClInclude Include="Placement.h">
       <Filter>Enums</Filter>
     </ClInclude>

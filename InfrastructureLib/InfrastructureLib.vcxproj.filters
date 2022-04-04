@@ -19,6 +19,9 @@
     <Filter Include="Structs">
       <UniqueIdentifier>{9edea836-5a92-4786-92cc-5e3d03a6d3bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enums">
+      <UniqueIdentifier>{a0bfe1f7-7478-4d68-bc3d-59171b51cd89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -41,6 +44,9 @@
     </ClInclude>
     <ClInclude Include="IGameMap.h">
       <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

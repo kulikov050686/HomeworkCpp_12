@@ -5,7 +5,7 @@
 #include <chrono>
 #include <thread>
 #include "../InfrastructureLib/Point.h"
-#include "Direction.h"
+#include "../InfrastructureLib/Direction.h"
 #include "Ship.h"
 #include "ShipController.h"
 #include "GameFieldController.h"
