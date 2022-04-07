@@ -10,11 +10,8 @@ namespace SnakeGameLib
 		_gameFieldController = controllerLocator->GetGameFieldController();
 		if (_gameFieldController == nullptr) throw "Error!!!";
 
-		_snakeController = controllerLocator->GetSnakeController();
-		if (_snakeController == nullptr) throw "Error!!!";
-
-		_fruitController = controllerLocator->GetFruitController();
-		if (_fruitController == nullptr) throw "Error!!!";
+		_entityCreator = controllerLocator->GetEntityCreator();
+		if (_entityCreator == nullptr) throw "Error!!!";
 	}
 
 	void Game::Start()

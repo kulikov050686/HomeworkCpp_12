@@ -20,20 +20,26 @@ namespace SnakeGameLib
 		ISnake() = default;
 
 		/// <summary>
-		/// Получить элемент змейки
-		/// </summary>
-		/// <param name="itemNumber"> Номер элемента </param>		
-		virtual SnakeElement<T> GetElement(size_t itemNumber) = 0;
-
-		/// <summary>
 		/// Задать элемент
 		/// </summary>
 		/// <param name="element"> Элемент </param>
 		virtual void SetElement(SnakeElement<T> element) = 0;
 
 		/// <summary>
+		/// Получить элемент
+		/// </summary>
+		/// <param name="itemNumber"> Номер элемента </param>		
+		virtual SnakeElement<T> GetElement(size_t itemNumber) = 0;
+
+		/// <summary>
+		/// Обновить элемент
+		/// </summary>
+		/// <param name="newElement"> Элемент </param>
+		virtual void UpdateElement(SnakeElement<T> newElement) = 0;
+		
+		/// <summary>
 		/// Получить количество элементов
-		/// </summary>		
+		/// </summary>
 		virtual size_t GetNumberOfElements() = 0;
 
 		/// <summary>

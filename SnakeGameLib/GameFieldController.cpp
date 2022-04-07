@@ -55,7 +55,7 @@ namespace SnakeGameLib
 
 			key = key && BelongingToPointOfGameArea(snake->GetElement(i).coordinates);
 
-			if(key) _field->SetElement(x, y, snakeElement);			
+			if(key) _field->SetElement(x, y, snakeElement);
 		}
 
 		return key;

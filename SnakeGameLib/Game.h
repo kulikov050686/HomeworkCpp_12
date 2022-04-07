@@ -2,8 +2,10 @@
 #include <iostream>
 #include <memory>
 #include "GameFieldController.h"
-#include "FruitController.h"
 #include "../InfrastructureLib/Point.h"
+#include "IFruit.h"
+#include "ISnake.h"
+#include "EntityCreator.h"
 
 namespace SnakeGameLib
 {
@@ -38,14 +40,19 @@ namespace SnakeGameLib
 		std::shared_ptr<GameFieldController> _gameFieldController;
 
 		/// <summary>
+		/// Создатель сущностей
+		/// </summary>
+		std::shared_ptr<EntityCreator> _entityCreator;
+
+		/// <summary>
 		/// Контроллер змейки
 		/// </summary>
-		std::shared_ptr<SnakeController> _snakeController;
+		std::shared_ptr<ISnake<uint16_t>> _snake;
 
 		/// <summary>
 		/// Контроллер фрукта
 		/// </summary>
-		std::shared_ptr<FruitController> _fruitController;
+		std::shared_ptr<IFruit> _fruit;
 
 		/// <summary>
 		/// Количество очков

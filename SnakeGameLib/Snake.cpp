@@ -18,13 +18,6 @@ namespace SnakeGameLib
 		if (numberOfElements > 1) Init();
 	}
 
-	SnakeElement<uint16_t> Snake::GetElement(size_t itemNumber)
-	{
-		if (itemNumber >= _numberOfElements) throw "Error!!!";	
-
-		return _snake[itemNumber];
-	}
-
 	void Snake::SetElement(SnakeElement<uint16_t> element)
 	{
 		for (auto i = _snake.begin(); i != _snake.end(); i++)
@@ -37,6 +30,25 @@ namespace SnakeGameLib
 		_lastId++;
 	}
 
+	SnakeElement<uint16_t> Snake::GetElement(size_t itemNumber)
+	{
+		return _snake[itemNumber];
+	}
+
+	void Snake::UpdateElement(SnakeElement<uint16_t> newElement)
+	{
+		bool key = true;
+
+		for (auto i = _snake.begin(); (i != _snake.end()) && key; i++)
+		{
+			if (i->id == newElement.id)
+			{
+				i->coordinates = newElement.coordinates;
+				key = !key;
+			}
+		}
+	}	
+	
 	size_t Snake::GetNumberOfElements()
 	{
 		return _numberOfElements;

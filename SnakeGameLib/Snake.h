@@ -23,17 +23,23 @@ namespace SnakeGameLib
 		Snake(Point2D<size_t> initialCoordinates, uint16_t elementData, size_t numberOfElements = 1);
 
 		/// <summary>
+		/// Задать элемент
+		/// </summary>
+		/// <param name="element"> Элемент </param>
+		void SetElement(SnakeElement<uint16_t> element) override;
+
+		/// <summary>
 		/// Получить элемент
 		/// </summary>
 		/// <param name="itemNumber"> Номер элемента </param>		
 		SnakeElement<uint16_t> GetElement(size_t itemNumber) override;
 
 		/// <summary>
-		/// Задать элемент
+		/// Обновить элемент
 		/// </summary>
-		/// <param name="element"> Элемент </param>
-		void SetElement(SnakeElement<uint16_t> element) override;
-
+		/// <param name="newElement"> Новый элемент </param>
+		void UpdateElement(SnakeElement<uint16_t> newElement) override;
+	
 		/// <summary>
 		/// Количество элементов
 		/// </summary>

@@ -1,8 +1,7 @@
 #pragma once
 #include <memory>
 #include "GameFieldController.h"
-#include "FruitController.h"
-#include "SnakeController.h"
+#include "EntityCreator.h"
 #include "../InfrastructureLib/Templates.h"
 
 namespace SnakeGameLib
@@ -23,17 +22,12 @@ namespace SnakeGameLib
 		/// Получить контроллер игрового поля
 		/// </summary>		
 		std::shared_ptr<GameFieldController> GetGameFieldController() { return std::make_shared<GameFieldController>(std::make_shared<GameField<uint16_t>>(10)); }
-
-		/// <summary>
-		/// Получить контроллер змейки
-		/// </summary>		
-		std::shared_ptr<SnakeController> GetSnakeController() { return std::make_shared<SnakeController>(); }
-
-		/// <summary>
-		/// Получить контроллер фрукта
-		/// </summary>		
-		std::shared_ptr<FruitController> GetFruitController() { return std::make_shared<FruitController>(); }
 		
+		/// <summary>
+		/// Создатель сущностей
+		/// </summary>		
+		std::shared_ptr<EntityCreator> GetEntityCreator() { return std::make_shared<EntityCreator>(); }
+
 		/// <summary>
 		/// Деструктор
 		/// </summary>

@@ -51,9 +51,6 @@
     <ClInclude Include="Fruit.h">
       <Filter>Models</Filter>
     </ClInclude>
-    <ClInclude Include="FruitController.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
     <ClInclude Include="ControllerLocator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -66,7 +63,7 @@
     <ClInclude Include="Snake.h">
       <Filter>Models</Filter>
     </ClInclude>
-    <ClInclude Include="SnakeController.h">
+    <ClInclude Include="EntityCreator.h">
       <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,13 +83,10 @@
     <ClCompile Include="Fruit.cpp">
       <Filter>Models</Filter>
     </ClCompile>
-    <ClCompile Include="FruitController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="Snake.cpp">
       <Filter>Models</Filter>
     </ClCompile>
-    <ClCompile Include="SnakeController.cpp">
+    <ClCompile Include="EntityCreator.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
   </ItemGroup>
