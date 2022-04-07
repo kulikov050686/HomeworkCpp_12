@@ -1,7 +1,8 @@
 #pragma once
 #include <locale.h>
 #include <memory>
-#include "../InfrastructureLib/Templates.h"
+#include "ControllerLocator.h"
+#include "Game.h"
 
 namespace SnakeGameLib
 {

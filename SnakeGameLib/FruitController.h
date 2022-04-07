@@ -43,4 +43,3 @@ namespace SnakeGameLib
 		FruitController& operator = (const FruitController&) = delete;
 	};
 }
-

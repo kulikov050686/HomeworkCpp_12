@@ -3,11 +3,18 @@
 
 namespace SnakeGameLib
 {
-	Game::Game(std::shared_ptr<GameFieldController> gameFieldController)
+	Game::Game(std::shared_ptr<ControllerLocator> controllerLocator)
 	{
-		if (gameFieldController == nullptr) throw "Error!!!";
+		if (controllerLocator == nullptr) throw "Error!!!"; 
 
-		_gameFieldController = gameFieldController;
+		_gameFieldController = controllerLocator->GetGameFieldController();
+		if (_gameFieldController == nullptr) throw "Error!!!";
+
+		_snakeController = controllerLocator->GetSnakeController();
+		if (_snakeController == nullptr) throw "Error!!!";
+
+		_fruitController = controllerLocator->GetFruitController();
+		if (_fruitController == nullptr) throw "Error!!!";
 	}
 
 	void Game::Start()
@@ -40,63 +47,10 @@ namespace SnakeGameLib
 	}
 
 	void Game::Init()
-	{
-		InitGameField();
+	{		
 	}
 
-	void Game::InitGameField()
+	void Game::AddFruit()
 	{
-		size_t size = _gameFieldController->GetSizeField();
-		Point2D<uint16_t> point{ 0,0 };
-		uint16_t key = 0;
-		size_t i = 0;
-
-		while (key < 4)
-		{
-			if (key == 0)
-			{
-				i++;
-				point.x = i;
-
-				if (i == size - 1)
-				{
-					i = 0;
-					key++;
-				}
-			}
-			else
-			{
-				if (key == 1)
-				{
-					i++;
-					point.y = i;
-
-					if (i == size - 1) key++;
-				}
-				else
-				{
-					if (key == 2)
-					{
-						i--;
-						point.x = i;
-
-						if (i == 0)
-						{
-							key++;
-							i = size - 1;
-						}
-					}
-					else
-					{
-						i--;
-						point.y = i;
-
-						if (i == 0) key++;
-					}
-				}
-			}
-
-			_gameFieldController->SetFieldElement(point, 1);
-		}
 	}
 }

@@ -25,6 +25,9 @@
     <Filter Include="Models">
       <UniqueIdentifier>{7f5e8aeb-30ba-49e0-af68-1c12a737c901}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Structs">
+      <UniqueIdentifier>{ef3fc908-ea5d-4b5d-99af-152afe75440a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -51,6 +54,21 @@
     <ClInclude Include="FruitController.h">
       <Filter>Controllers</Filter>
     </ClInclude>
+    <ClInclude Include="ControllerLocator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeElement.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="ISnake.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -69,6 +87,12 @@
       <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="FruitController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
   </ItemGroup>
