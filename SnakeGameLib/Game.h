@@ -1,11 +1,17 @@
 #pragma once
 #include <iostream>
 #include <memory>
+#include <chrono>
+#include <thread>
+#include <conio.h>
 #include "GameFieldController.h"
 #include "../InfrastructureLib/Point.h"
+#include "../RandomLib/Random.h"
+#include "../InfrastructureLib/Direction.h"
 #include "IFruit.h"
 #include "ISnake.h"
 #include "EntityCreator.h"
+#include "TypeOfFruit.h"
 
 namespace SnakeGameLib
 {
@@ -28,7 +34,7 @@ namespace SnakeGameLib
 		void Start();
 
 		/// <summary>
-		/// Дестуктор
+		/// Деструктор
 		/// </summary>
 		virtual ~Game() = default;
 
@@ -60,6 +66,16 @@ namespace SnakeGameLib
 		size_t _numberOfPoints = 0;
 
 		/// <summary>
+		/// Завершение игры
+		/// </summary>
+		bool _gameOver = false;
+
+		/// <summary>
+		/// Направление
+		/// </summary>
+		Direction _direction;
+
+		/// <summary>
 		/// Печать игрового поля
 		/// </summary>		
 		void Print();
@@ -73,5 +89,20 @@ namespace SnakeGameLib
 		/// Добавить фрукт на игровое поле
 		/// </summary>
 		void AddFruit();
+
+		/// <summary>
+		/// Движение змейки
+		/// </summary>
+		/// /// <param name="direction"> Направление </param>
+		void SnakeMovement(Direction direction);
+		
+		/// <summary>
+		/// Попасть на змею
+		/// </summary>
+		/// <param name="fruit"> Фрукт </param>
+		/// <param name="snake"> Змея </param>
+		bool GetOnSnake(std::shared_ptr<IFruit> fruit, std::shared_ptr<ISnake<uint16_t>> snake);
+
+		void Input();
 	};
 }

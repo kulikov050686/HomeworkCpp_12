@@ -2,6 +2,7 @@
 #include <memory>
 #include "../InfrastructureLib/Templates.h"
 #include "../InfrastructureLib/Point.h"
+#include "../RandomLib/Random.h"
 #include "IFruit.h"
 #include "ISnake.h"
 #include "TypeOfFruit.h"
@@ -54,13 +55,18 @@ namespace SnakeGameLib
 		/// Добавить фрукт на поле
 		/// </summary>
 		/// <param name="fruit"> Фрукт </param>		
-		bool AddFruitOnField(std::shared_ptr<IFruit> fruit);		
+		bool AddFruitOnField(std::shared_ptr<IFruit> fruit);
 
 		/// <summary>
 		/// Принадлежность точки игровой области
 		/// </summary>
 		/// <param name="point"> Точка </param>		
-		bool BelongingToPointOfGameArea(Point2D<size_t> point);		
+		bool BelongingToPointOfGameArea(Point2D<size_t> point);
+
+		/// <summary>
+		/// Создать случайную точку принадлежащую игровой области
+		/// </summary>		
+		Point2D<size_t> CreateRandomPoint();
 
 	private:
 
@@ -77,6 +83,6 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Инициализация поля
 		/// </summary>
-		void InitField();		
+		void InitField();
 	};
 }

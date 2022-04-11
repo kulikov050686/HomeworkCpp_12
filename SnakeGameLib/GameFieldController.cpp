@@ -71,16 +71,19 @@ namespace SnakeGameLib
 			{
 				case TypeOfFruit::APPLE:
 				{
+					_field->SetElement(fruit->GetCoordinates().x, fruit->GetCoordinates().y, 3);
 					break;
 				}			
 				
 				case TypeOfFruit::PEACH:
 				{
+					_field->SetElement(fruit->GetCoordinates().x, fruit->GetCoordinates().y, 4);
 					break;
 				}				
 
 				case TypeOfFruit::PEAR:
 				{
+					_field->SetElement(fruit->GetCoordinates().x, fruit->GetCoordinates().y, 5);
 					break;
 				}
 
@@ -96,6 +99,11 @@ namespace SnakeGameLib
 	bool GameFieldController::BelongingToPointOfGameArea(Point2D<size_t> point)
 	{
 		return (0 < point.x) && (point.x < _sizeField - 1) && (0 < point.y) && (point.y < _sizeField - 1);
+	}
+
+	Point2D<size_t> GameFieldController::CreateRandomPoint()
+	{
+		return { Random::Next(1, _sizeField - 1), Random::Next(1, _sizeField - 1) };
 	}
 
 	void GameFieldController::InitField()

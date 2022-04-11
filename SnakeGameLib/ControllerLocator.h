@@ -21,7 +21,7 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Получить контроллер игрового поля
 		/// </summary>		
-		std::shared_ptr<GameFieldController> GetGameFieldController() { return std::make_shared<GameFieldController>(std::make_shared<GameField<uint16_t>>(10)); }
+		std::shared_ptr<GameFieldController> GetGameFieldController() { return std::make_shared<GameFieldController>(std::make_shared<GameField<uint16_t>>(30)); }
 		
 		/// <summary>
 		/// Создатель сущностей

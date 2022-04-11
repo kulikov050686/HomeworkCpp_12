@@ -1,5 +1,7 @@
 #pragma once
-#include <locale.h>
+#include "GLEW/include/glew.h"
+#include "GL/include/glfw3.h"
+#include <iostream>
 #include <memory>
 #include "ControllerLocator.h"
 #include "Game.h"

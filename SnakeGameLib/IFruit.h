@@ -25,7 +25,7 @@ namespace SnakeGameLib
 		/// Получить тип фрукта
 		/// </summary>		
 		virtual TypeOfFruit GetTypeOfFruit() = 0;
-
+				
 		/// <summary>
 		/// Деструктор
 		/// </summary>
