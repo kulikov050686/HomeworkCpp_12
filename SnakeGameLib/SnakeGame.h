@@ -1,4 +1,5 @@
 #pragma once
+#include "freeglut/include/GL/freeglut.h"
 #include <iostream>
 #include <memory>
 #include "ControllerLocator.h"
@@ -29,6 +30,8 @@ namespace SnakeGameLib
 		virtual ~SnakeGame() = default;
 
 	private:
+
+		void static Display();
 
 		/// <summary>
 		/// Запрет присваивания
