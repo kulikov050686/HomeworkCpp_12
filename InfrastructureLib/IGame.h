@@ -13,11 +13,6 @@ public:
 	IGame() = default;
 
 	/// <summary>
-	/// Получить указатель
-	/// </summary>	
-	virtual IGame* GetPointer() = 0;
-
-	/// <summary>
 	/// Отрисовать
 	/// </summary>
 	virtual void Draw() = 0;

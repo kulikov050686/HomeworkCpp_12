@@ -12,84 +12,66 @@ namespace SnakeGameLib
 
 		_entityCreator = controllerLocator->GetEntityCreator();
 		if (_entityCreator == nullptr) throw "Error!!!";
+
+		Init();
 	}
 
 	void Game::Draw()
 	{
-		glColor3f(1.0f, 0.0f, 0.0f);
-		glLineWidth(3);
-		glBegin(GL_LINES);
-		glVertex2d(-1, 0);
-		glVertex2d(1, 0);
-		glEnd();	
+		DrowFiled();
 	}
 
 	void Game::Timer(int value)
-	{
-
+	{		
 	}
 
 	void Game::Reshape(int width, int height)
 	{
+		GLfloat aspectRatio;
 
+		if (height == 0) height = 1;	
+
+		glViewport(0, 0, width, height);
+
+		/*glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+
+		aspectRatio = (GLfloat)width / (GLfloat)height;
+
+		if (width >= height)
+		{
+			gluOrtho2D(0, 0, width / aspectRatio, height / aspectRatio);
+		}
+		else
+		{
+			gluOrtho2D(0, 0, width, height);
+		}
+
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();*/
+
+		
+
+		_widthWindow = width;
+		_heightWindow = height;
+
+		_width = width / _gameFieldController->GetSizeField();
+		_height = height / _gameFieldController->GetSizeField();
+
+		std::cout << "width: " << _widthWindow << " " << _width << std::endl;
+		std::cout << "height: " << _heightWindow << " " << _height << std::endl;		
 	}
 
 	void Game::Keyboard(unsigned char key, int x, int y)
 	{
-
-	}
-
-	void Game::Print()
-	{
-		setlocale(LC_ALL, "Russian.utf8");
-		system("cls");
-
-		Point2D<uint16_t> point{ 0, 0 };
-		size_t size = _gameFieldController->GetSizeField();
-
-		for (size_t y = 0; y < size; y++)
-		{
-			point.y = y;
-
-			for (size_t x = 0; x < size; x++)
-			{
-				point.x = x;
-
-				switch (_gameFieldController->GetFieldElement(point))
-				{
-				case 0:
-					std::cout << ' ';
-					break;
-				case 1:
-					std::cout << '#';
-					break;
-				case 2:
-					std::cout << '*';
-					break;
-				case 3:
-					std::cout << '&';
-					break;
-				case 4:
-					std::cout << '$';
-					break;
-				case 5:
-					std::cout << '@';
-					break;				
-				}								
-			}
-
-			std::cout << std::endl;
-		}
-
-		std::cout << "Количество очков: " << _numberOfPoints << std::endl;		
-	}
+	}	
 
 	void Game::Init()
 	{
-		Point2D<size_t> startPoint{ 10,10 };
+		//Point2D<size_t> startPoint{ 10,10 };
 		
-		_snake = _entityCreator->CreateSnake(startPoint, 2);
-		_gameFieldController->AddSnakeOnField(_snake);
+		//_snake = _entityCreator->CreateSnake(startPoint, 2);
+		//_gameFieldController->AddSnakeOnField(_snake);
 
 		//AddFruit();
 
@@ -130,6 +112,27 @@ namespace SnakeGameLib
 
 		return false;
 	}
+
+	void Game::DrowFiled()
+	{
+		glColor3f(0.0f, 1.0f, 0.0f);
+
+		glBegin(GL_LINES);
+
+		for (int i = 0; i < _widthWindow; i += _width)
+		{
+			glVertex2f(i, 0);
+			glVertex2f(i, _heightWindow);
+		}
+		
+		for (int j = 0; j < _heightWindow; j += _height)
+		{
+			glVertex2f(0, j);
+			glVertex2f(_widthWindow, j);
+		}
+
+		glEnd();
+	}
 		
 	void Game::SnakeMovement(Direction direction)
 	{
@@ -148,20 +151,16 @@ namespace SnakeGameLib
 		switch (direction)
 		{
 			case Direction::RIGHT: 
-				s.coordinates.x += 1;
-				//std::cout << "RIGHT" << std::endl;
+				s.coordinates.x += 1;				
 				break;					
 			case Direction::LEFT:
-				s.coordinates.x -= 1;
-				//std::cout << "LEFT" << std::endl;
+				s.coordinates.x -= 1;				
 				break;					
 			case Direction::UP:
-				s.coordinates.y += 1;
-				//std::cout << "UP" << std::endl;
+				s.coordinates.y += 1;				
 				break;					
 			case Direction::DOWN:
-				s.coordinates.y -= 1;
-				//std::cout << "DOWN" << std::endl;
+				s.coordinates.y -= 1;				
 				break;						
 		}
 

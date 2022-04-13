@@ -30,11 +30,6 @@ namespace SnakeGameLib
 		Game(std::shared_ptr<ControllerLocator> controllerLocator);
 
 		/// <summary>
-		/// Получить указатель
-		/// </summary>		
-		IGame* GetPointer() override { return this; }
-
-		/// <summary>
 		/// Отрисовать
 		/// </summary>
 		void Draw() override;
@@ -103,10 +98,21 @@ namespace SnakeGameLib
 		Direction _direction;
 
 		/// <summary>
-		/// Печать игрового поля
-		/// </summary>		
-		void Print();
+		/// Ширина окна
+		/// </summary>
+		int _widthWindow = 0;
 
+		/// <summary>
+		/// Высота окна
+		/// </summary>
+		int _heightWindow = 0;
+
+		int _scale = 25;
+
+		int _width = 0;
+
+		int _height = 0;
+		
 		/// <summary>
 		/// Инициализация
 		/// </summary>		
@@ -128,6 +134,8 @@ namespace SnakeGameLib
 		/// </summary>
 		/// <param name="fruit"> Фрукт </param>
 		/// <param name="snake"> Змея </param>
-		bool GetOnSnake(std::shared_ptr<IFruit> fruit, std::shared_ptr<ISnake<uint16_t>> snake);		
+		bool GetOnSnake(std::shared_ptr<IFruit> fruit, std::shared_ptr<ISnake<uint16_t>> snake);
+
+		void DrowFiled();
 	};
 }

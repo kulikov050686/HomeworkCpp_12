@@ -3,51 +3,61 @@
 
 namespace SnakeGameLib
 {
+    std::shared_ptr<IGame> SnakeGame::_game;
+
     SnakeGame::SnakeGame(std::shared_ptr<IGame> game)
     {
         if(game == nullptr) throw "Error!!!";
-        _game = game;
+        _game = game;       
     }
 
     void SnakeGame::Run()
 	{
         char** argv = nullptr;
         int argc = 1;
-        
-        static IGame* g = _game->GetPointer();
-        
+
         glutInit(&argc, argv);
         glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
         glutInitWindowSize(_widthWindow, _heightWindow);
         glutCreateWindow("Snake");
-        glClearColor(0, 0, 0, 0);
-        //glViewport(0, 0, _widthWindow, _heightWindow);
+        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        glViewport(0, 0, _widthWindow, _heightWindow);
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        //gluOrtho2D(0.0, _widthWindow, 0.0, _heightWindow);
+        gluOrtho2D(0.0, _widthWindow, 0.0, _heightWindow);
 
-        glutReshapeFunc([](int w, int h)
-            {
-                g->Reshape(w, h);
-            });
-
-        glutTimerFunc(50, [](int value)
-            {
-                g->Timer(value);
-            }, 1);
-
-        glutKeyboardFunc([](unsigned char k, int x, int y) 
-            { 
-                g->Keyboard(k, x, y); 
-            });
-
-        glutDisplayFunc([]()
-            { 
-                glClear(GL_COLOR_BUFFER_BIT);
-                g->Draw(); 
-                glFlush();
-            });
+        glutReshapeFunc(Reshape);
+        glutTimerFunc(40, Timer, 1);
+        glutDisplayFunc(Display);
+        glutKeyboardFunc(Keyboard);
 
         glutMainLoop();        
-	}   
+	}
+
+    void SnakeGame::Display()
+    {
+        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        _game->Draw();
+
+        glFlush();
+    }
+
+    void SnakeGame::Timer(int value)
+    {
+        _game->Timer(value);
+
+        //glutTimerFunc(50, Timer, 1);
+    }
+
+    void SnakeGame::Reshape(int width, int height)
+    {
+        _game->Reshape(width, height);
+    }
+
+    void SnakeGame::Keyboard(unsigned char key, int x, int y)
+    {
+        _game->Keyboard(key, x, y);
+    }
 }
