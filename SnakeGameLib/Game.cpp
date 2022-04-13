@@ -16,6 +16,26 @@ namespace SnakeGameLib
 
 	void Game::Draw()
 	{
+		glColor3f(1.0f, 0.0f, 0.0f);
+		glLineWidth(3);
+		glBegin(GL_LINES);
+		glVertex2d(-1, 0);
+		glVertex2d(1, 0);
+		glEnd();	
+	}
+
+	void Game::Timer(int value)
+	{
+
+	}
+
+	void Game::Reshape(int width, int height)
+	{
+
+	}
+
+	void Game::Keyboard(unsigned char key, int x, int y)
+	{
 
 	}
 

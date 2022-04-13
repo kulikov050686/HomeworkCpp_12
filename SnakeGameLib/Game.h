@@ -1,5 +1,7 @@
 #pragma once
+//#include "freeglut/include/GL/freeglut.h"
 #include <iostream>
+#include <GL/GL.h>
 #include <memory>
 #include "GameFieldController.h"
 #include "../InfrastructureLib/Point.h"
@@ -28,9 +30,35 @@ namespace SnakeGameLib
 		Game(std::shared_ptr<ControllerLocator> controllerLocator);
 
 		/// <summary>
+		/// Получить указатель
+		/// </summary>		
+		IGame* GetPointer() override { return this; }
+
+		/// <summary>
 		/// Отрисовать
 		/// </summary>
 		void Draw() override;
+
+		// <summary>
+		/// Таймер
+		/// </summary>
+		/// <param name="value"></param>
+		void Timer(int value) override;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="width"></param>
+		/// <param name="height"></param>
+		void Reshape(int width, int height) override;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="key"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		void Keyboard(unsigned char key, int x, int y) override;
 
 		/// <summary>
 		/// Деструктор

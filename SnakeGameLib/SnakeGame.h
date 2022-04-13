@@ -26,7 +26,7 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Деструктор
 		/// </summary>
-		virtual ~SnakeGame() = default;		
+		virtual ~SnakeGame() = default;
 
 	private:
 
@@ -44,10 +44,5 @@ namespace SnakeGameLib
 		/// Высота окна
 		/// </summary>
 		int _heightWindow = 480;
-		
-		/// <summary>
-		/// Функция отрисовки
-		/// </summary>
-		void static Display();		
 	};	
 }
