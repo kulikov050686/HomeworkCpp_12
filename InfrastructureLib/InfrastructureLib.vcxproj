@@ -155,6 +155,7 @@
     <ClInclude Include="GameField.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="IConverter.h" />
+    <ClInclude Include="IGame.h" />
     <ClInclude Include="IGameField.h" />
     <ClInclude Include="IGameMap.h" />
     <ClInclude Include="pch.h" />

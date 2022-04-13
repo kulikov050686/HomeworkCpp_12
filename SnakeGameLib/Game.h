@@ -1,24 +1,23 @@
 #pragma once
 #include <iostream>
 #include <memory>
-#include <chrono>
-#include <thread>
-#include <conio.h>
 #include "GameFieldController.h"
 #include "../InfrastructureLib/Point.h"
 #include "../RandomLib/Random.h"
 #include "../InfrastructureLib/Direction.h"
+#include "../InfrastructureLib/IGame.h"
 #include "IFruit.h"
 #include "ISnake.h"
 #include "EntityCreator.h"
 #include "TypeOfFruit.h"
+#include "ControllerLocator.h";
 
 namespace SnakeGameLib
 {
 	/// <summary>
 	/// Класс игра
 	/// </summary>
-	class Game
+	class Game : public IGame
 	{
 	public:
 
@@ -29,9 +28,9 @@ namespace SnakeGameLib
 		Game(std::shared_ptr<ControllerLocator> controllerLocator);
 
 		/// <summary>
-		/// Старт игры
+		/// Отрисовать
 		/// </summary>
-		void Start();
+		void Draw() override;
 
 		/// <summary>
 		/// Деструктор
@@ -101,8 +100,6 @@ namespace SnakeGameLib
 		/// </summary>
 		/// <param name="fruit"> Фрукт </param>
 		/// <param name="snake"> Змея </param>
-		bool GetOnSnake(std::shared_ptr<IFruit> fruit, std::shared_ptr<ISnake<uint16_t>> snake);
-
-		void Input();
+		bool GetOnSnake(std::shared_ptr<IFruit> fruit, std::shared_ptr<ISnake<uint16_t>> snake);		
 	};
 }

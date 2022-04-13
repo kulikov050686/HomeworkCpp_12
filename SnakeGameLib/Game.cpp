@@ -14,23 +14,9 @@ namespace SnakeGameLib
 		if (_entityCreator == nullptr) throw "Error!!!";
 	}
 
-	void Game::Start()
-	{		
-		Init();
-		Print();
-		//std::this_thread::sleep_for(std::chrono::seconds(1));
+	void Game::Draw()
+	{
 
-		while (!_gameOver)
-		{
-			_gameFieldController->ClearField();			
-			Input();
-			SnakeMovement(_direction);
-			_gameFieldController->AddSnakeOnField(_snake);
-
-			Print();
-
-			std::this_thread::sleep_for(std::chrono::seconds(1));
-		}		
 	}
 
 	void Game::Print()
@@ -124,32 +110,7 @@ namespace SnakeGameLib
 
 		return false;
 	}
-
-	void Game::Input()
-	{
-		if (_kbhit())
-		{
-			switch (_getch())
-			{
-			case 72:
-				_direction = Direction::UP;				
-				break;
-			case 80:
-				_direction = Direction::DOWN;				
-				break;
-			case 75:
-				_direction = Direction::LEFT;				
-				break;
-			case 77:
-				_direction = Direction::RIGHT;				
-				break;
-			case 27:
-				_gameOver = true;
-				break;
-			}
-		}		
-	}
-	
+		
 	void Game::SnakeMovement(Direction direction)
 	{
 		for (size_t i = _snake->GetNumberOfElements() - 1; i > 0; --i)

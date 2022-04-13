@@ -10,6 +10,8 @@
 #include "Task7.h"
 #include "Task8.h"
 #include "Task9.h"
+#include "../SnakeGameLib/Game.h"
+#include "../SnakeGameLib/ControllerLocator.h"
 
 /// <summary>
 /// Локатор задач
@@ -26,7 +28,14 @@ public:
 	/// <summary>
 	/// Задача 1
 	/// </summary>
-	std::shared_ptr<ITask> GetTask1() { return std::make_shared<Task1>(std::make_shared<SnakeGameLib::SnakeGame>()); }
+	std::shared_ptr<ITask> GetTask1() 
+	{
+		auto controller = std::make_shared<SnakeGameLib::ControllerLocator>();
+		auto game = std::make_shared<SnakeGameLib::Game>(controller);
+		auto snakeGame = std::make_shared<SnakeGameLib::SnakeGame>(game);
+
+		return std::make_shared<Task1>(snakeGame);
+	}
 
 	/// <summary>
 	/// Задача 2

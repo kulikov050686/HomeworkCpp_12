@@ -51,6 +51,9 @@
     <ClInclude Include="IConverter.h">
       <Filter>Interfaces</Filter>
     </ClInclude>
+    <ClInclude Include="IGame.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

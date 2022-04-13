@@ -2,8 +2,7 @@
 #include "freeglut/include/GL/freeglut.h"
 #include <iostream>
 #include <memory>
-#include "ControllerLocator.h"
-#include "Game.h"
+#include "../InfrastructureLib/IGame.h"
 
 namespace SnakeGameLib
 {
@@ -17,7 +16,7 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Конструктор
 		/// </summary>
-		SnakeGame() = default;
+		SnakeGame(std::shared_ptr<IGame> game);
 
 		/// <summary>
 		/// Запуск игры
@@ -27,20 +26,28 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Деструктор
 		/// </summary>
-		virtual ~SnakeGame() = default;
+		virtual ~SnakeGame() = default;		
 
 	private:
 
-		void static Display();
+		/// <summary>
+		/// Игра
+		/// </summary>
+		std::shared_ptr<IGame> _game;
 
 		/// <summary>
-		/// Запрет присваивания
-		/// </summary>	
-		SnakeGame& operator = (const SnakeGame&) = delete;
+		/// Ширина окна
+		/// </summary>
+		int _widthWindow = 640;
 
 		/// <summary>
-		/// Запрет копирования
-		/// </summary>	
-		SnakeGame(const SnakeGame&) = delete;
-	};
+		/// Высота окна
+		/// </summary>
+		int _heightWindow = 480;
+		
+		/// <summary>
+		/// Функция отрисовки
+		/// </summary>
+		void static Display();		
+	};	
 }
