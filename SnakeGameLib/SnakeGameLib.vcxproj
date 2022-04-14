@@ -175,6 +175,7 @@
     <ClInclude Include="IFruit.h" />
     <ClInclude Include="ISnake.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ColorRGB.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeElement.h" />
     <ClInclude Include="SnakeGame.h" />

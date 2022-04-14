@@ -18,7 +18,34 @@ namespace SnakeGameLib
 
 	void Game::Draw()
 	{
-		DrowFiled();
+		size_t size = _gameFieldController->GetSizeField();
+		Point2D<uint16_t> point{ 0,0 };
+		Point2D<GLint> rectangleCoordinates{ 0,0 };
+		
+		for (size_t y = 0; y < size; y++)
+		{
+			point.y = y;
+
+			for (size_t x = 0; x < size; x++)
+			{
+				point.x = x;
+
+				switch (_gameFieldController->GetFieldElement(point))
+				{
+					case 1:
+					{
+						ColorRGB<float> color{ 1.0, 1.0, 1.0 };
+						Rectangle(rectangleCoordinates, color, _shift);
+						break;
+					}										
+				}
+
+				rectangleCoordinates.x += _shift;
+			}
+
+			rectangleCoordinates.y += _shift;
+			rectangleCoordinates.x = 0;
+		}			
 	}
 
 	void Game::Timer(int value)
@@ -27,39 +54,22 @@ namespace SnakeGameLib
 
 	void Game::Reshape(int width, int height)
 	{
-		GLfloat aspectRatio;
+		if (height == 0) height = 1;
 
-		if (height == 0) height = 1;	
-
-		glViewport(0, 0, width, height);
-
-		/*glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-
-		aspectRatio = (GLfloat)width / (GLfloat)height;
-
-		if (width >= height)
+		if (width > height)
 		{
-			gluOrtho2D(0, 0, width / aspectRatio, height / aspectRatio);
+			_shift = width / _gameFieldController->GetSizeField();
 		}
 		else
 		{
-			gluOrtho2D(0, 0, width, height);
+			_shift = height / _gameFieldController->GetSizeField();
 		}
 
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();*/
+		if (_shift == 0) _shift = 10;
 
-		
-
+		//glViewport(0, 0, width, height);
 		_widthWindow = width;
-		_heightWindow = height;
-
-		_width = width / _gameFieldController->GetSizeField();
-		_height = height / _gameFieldController->GetSizeField();
-
-		std::cout << "width: " << _widthWindow << " " << _width << std::endl;
-		std::cout << "height: " << _heightWindow << " " << _height << std::endl;		
+		_heightWindow = height;				
 	}
 
 	void Game::Keyboard(unsigned char key, int x, int y)
@@ -68,13 +78,6 @@ namespace SnakeGameLib
 
 	void Game::Init()
 	{
-		//Point2D<size_t> startPoint{ 10,10 };
-		
-		//_snake = _entityCreator->CreateSnake(startPoint, 2);
-		//_gameFieldController->AddSnakeOnField(_snake);
-
-		//AddFruit();
-
 		_numberOfPoints = 0;
 		_gameOver = false;
 	}
@@ -113,27 +116,12 @@ namespace SnakeGameLib
 		return false;
 	}
 
-	void Game::DrowFiled()
+	void Game::Rectangle(Point2D<GLint> rectangleCoordinates, ColorRGB<GLfloat> color, GLint size)
 	{
-		glColor3f(0.0f, 1.0f, 0.0f);
-
-		glBegin(GL_LINES);
-
-		for (int i = 0; i < _widthWindow; i += _width)
-		{
-			glVertex2f(i, 0);
-			glVertex2f(i, _heightWindow);
-		}
-		
-		for (int j = 0; j < _heightWindow; j += _height)
-		{
-			glVertex2f(0, j);
-			glVertex2f(_widthWindow, j);
-		}
-
-		glEnd();
+		glColor3f(color.r, color.g, color.b);
+		glRecti(rectangleCoordinates.x, rectangleCoordinates.y, rectangleCoordinates.x + size, rectangleCoordinates.y + size);
 	}
-		
+	
 	void Game::SnakeMovement(Direction direction)
 	{
 		for (size_t i = _snake->GetNumberOfElements() - 1; i > 0; --i)

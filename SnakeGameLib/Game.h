@@ -1,5 +1,4 @@
 #pragma once
-//#include "freeglut/include/GL/freeglut.h"
 #include <iostream>
 #include <GL/GL.h>
 #include <memory>
@@ -13,6 +12,7 @@
 #include "EntityCreator.h"
 #include "TypeOfFruit.h"
 #include "ControllerLocator.h";
+#include "ColorRGB.h"
 
 namespace SnakeGameLib
 {
@@ -107,12 +107,11 @@ namespace SnakeGameLib
 		/// </summary>
 		int _heightWindow = 0;
 
-		int _scale = 25;
+		/// <summary>
+		/// Смещение
+		/// </summary>
+		int _shift = 0;
 
-		int _width = 0;
-
-		int _height = 0;
-		
 		/// <summary>
 		/// Инициализация
 		/// </summary>		
@@ -136,6 +135,12 @@ namespace SnakeGameLib
 		/// <param name="snake"> Змея </param>
 		bool GetOnSnake(std::shared_ptr<IFruit> fruit, std::shared_ptr<ISnake<uint16_t>> snake);
 
-		void DrowFiled();
+		/// <summary>
+		/// Прямоугольник
+		/// </summary>		
+		/// <param name="rectangleCoordinates"> Координаы прямоугольника </param>
+		/// <param name="color"> Цвет </param>
+		/// <param name="size"> Размер </param>
+		void Rectangle(Point2D<GLint> rectangleCoordinates, ColorRGB<GLfloat> color, GLint size);
 	};
 }

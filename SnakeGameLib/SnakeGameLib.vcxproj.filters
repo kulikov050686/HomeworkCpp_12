@@ -66,6 +66,9 @@
     <ClInclude Include="EntityCreator.h">
       <Filter>Controllers</Filter>
     </ClInclude>
+    <ClInclude Include="ColorRGB.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
