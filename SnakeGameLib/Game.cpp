@@ -124,8 +124,8 @@ namespace SnakeGameLib
 		}
 	}
 
-	void Game::Idel()
-	{
+	void Game::Idel() 
+	{		
 	}
 
 	void Game::Init()
@@ -159,10 +159,6 @@ namespace SnakeGameLib
 					_fruit = _entityCreator->CreateFruit(_gameFieldController->CreateRandomPoint(), TypeOfFruit::PEACH);
 				break;
 			}
-
-			bool k = GetOnSnake(_fruit, _snake);
-			std::cout << k << " x=" << _fruit->GetCoordinates().x << " y= " << _fruit->GetCoordinates().y << std::endl;
-
 		} while (GetOnSnake(_fruit, _snake));
 
 		_gameFieldController->AddFruitOnField(_fruit);

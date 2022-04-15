@@ -30,33 +30,33 @@ namespace SnakeGameLib
 		Game(std::shared_ptr<ControllerLocator> controllerLocator);
 
 		/// <summary>
-		/// Отрисовать
+		/// Отрисовка
 		/// </summary>
 		void Draw() override;
 
 		// <summary>
-		/// Таймер
+		/// Обработка событий таймера
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="value"> Параметр </param>
 		void Timer(int value) override;
 
 		/// <summary>
-		/// 
+		/// Обработка событий изменения размеров окна
 		/// </summary>
-		/// <param name="width"></param>
-		/// <param name="height"></param>
+		/// <param name="width"> Ширина окна </param>
+		/// <param name="height"> Высота окна </param>
 		void Reshape(int width, int height) override;
 
 		/// <summary>
-		/// 
+		/// Обработка событий клавиатуры
 		/// </summary>
-		/// <param name="key"></param>
-		/// <param name="x"></param>
-		/// <param name="y"></param>
+		/// <param name="key"> Код клавиши </param>
+		/// <param name="x"> Координата x мыши </param>
+		/// <param name="y"> Координата y мыши </param>
 		void Keyboard(unsigned char key, int x, int y) override;
 
 		/// <summary>
-		/// 
+		/// Обработка событий времени бездействия
 		/// </summary>
 		void Idel() override;
 

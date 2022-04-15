@@ -69,7 +69,7 @@ namespace SnakeGameLib
 		{
 			switch (fruit->GetTypeOfFruit())
 			{
-				case TypeOfFruit::APPLE:
+				case TypeOfFruit::APPLE: 
 				{
 					_field->SetElement(fruit->GetCoordinates().x, fruit->GetCoordinates().y, 3);
 					break;

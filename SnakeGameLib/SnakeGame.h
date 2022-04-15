@@ -70,11 +70,6 @@ namespace SnakeGameLib
 		/// <param name="key"> Символ клавиши </param>
 		/// <param name="x"> Координата x мыши </param>
 		/// <param name="y"> Координата y мыши </param>
-		static void Keyboard(unsigned char key, int x, int y);
-
-		/// <summary>
-		/// 
-		/// </summary>
-		static void Idel();
+		static void Keyboard(unsigned char key, int x, int y);		
 	};	
 }
