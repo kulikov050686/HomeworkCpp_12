@@ -190,7 +190,7 @@ namespace SnakeGameLib
 
 			_snake->UpdateElement(s);
 		}
-
+		
 		auto s = _snake->GetElement(0);
 
 		switch (_direction)
@@ -202,15 +202,25 @@ namespace SnakeGameLib
 					s.coordinates.x += 1;
 					_currentDirection = _direction;
 				}
+				else
+				{
+					s.coordinates.x -= 1;
+					_direction = Direction::LEFT;
+				}
 
 				break;
 			}									
 			case Direction::LEFT:
 			{
 				if (_currentDirection != Direction::RIGHT) 
-				{ 
+				{ 					
 					s.coordinates.x -= 1;
 					_currentDirection = _direction;
+				}
+				else
+				{
+					s.coordinates.x += 1;
+					_direction = Direction::RIGHT;
 				}
 
 				break;
@@ -218,9 +228,14 @@ namespace SnakeGameLib
 			case Direction::UP:
 			{
 				if (_currentDirection != Direction::DOWN) 
-				{
+				{					
 					s.coordinates.y += 1;
 					_currentDirection = _direction;
+				}
+				else
+				{
+					s.coordinates.y -= 1;
+					_direction = Direction::DOWN;
 				}
 
 				break;
@@ -232,11 +247,16 @@ namespace SnakeGameLib
 					s.coordinates.y -= 1;
 					_currentDirection = _direction;
 				}
+				else
+				{
+					s.coordinates.y += 1;
+					_direction = Direction::UP;
+				}
 
 				break;
 			}			
 		}
 
 		_snake->UpdateElement(s);
-	}
+	}	
 }

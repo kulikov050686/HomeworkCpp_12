@@ -136,7 +136,7 @@ namespace SnakeGameLib
 		/// Движение змейки
 		/// </summary>		
 		void SnakeMovement();
-		
+				
 		/// <summary>
 		/// Попасть на змею
 		/// </summary>
