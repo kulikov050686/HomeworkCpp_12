@@ -34,10 +34,34 @@ namespace SnakeGameLib
 				{
 					case 1:
 					{
-						ColorRGB<float> color{ 1.0, 1.0, 1.0 };
+						ColorRGB<float> color{ 0.8f, 0.8f, 0.8f };
 						Rectangle(rectangleCoordinates, color, _shift);
 						break;
-					}										
+					}
+					case 2:
+					{
+						ColorRGB<float> color{ 0.0f, 0.0f, 1.0f };
+						Rectangle(rectangleCoordinates, color, _shift);
+						break;
+					}
+					case 3:
+					{
+						ColorRGB<float> color{ 1.0f, 1.0f, 1.0f };
+						Rectangle(rectangleCoordinates, color, _shift);
+						break;
+					}
+					case 4:
+					{
+						ColorRGB<float> color{ 0.0f, 1.0f, 0.0f };
+						Rectangle(rectangleCoordinates, color, _shift);
+						break;
+					}
+					case 5:
+					{
+						ColorRGB<float> color{ 1.0f, 0.0f, 0.0f };
+						Rectangle(rectangleCoordinates, color, _shift);
+						break;
+					}
 				}
 
 				rectangleCoordinates.x += _shift;
@@ -45,7 +69,7 @@ namespace SnakeGameLib
 
 			rectangleCoordinates.y += _shift;
 			rectangleCoordinates.x = 0;
-		}			
+		}
 	}
 
 	void Game::Timer(int value)
@@ -55,6 +79,7 @@ namespace SnakeGameLib
 	void Game::Reshape(int width, int height)
 	{
 		if (height == 0) height = 1;
+		glViewport(0, 0, width, height);
 
 		if (width > height)
 		{
@@ -66,20 +91,25 @@ namespace SnakeGameLib
 		}
 
 		if (_shift == 0) _shift = 10;
-
-		//glViewport(0, 0, width, height);
+		
 		_widthWindow = width;
 		_heightWindow = height;				
 	}
 
 	void Game::Keyboard(unsigned char key, int x, int y)
 	{
-	}	
+	}
 
 	void Game::Init()
 	{
 		_numberOfPoints = 0;
-		_gameOver = false;
+		_gameOver = false;		
+		Point2D<size_t> point{ _gameFieldController->GetSizeField() / 2, _gameFieldController->GetSizeField() / 2 };
+
+		_snake = _entityCreator->CreateSnake(point, 2, 4);
+		_gameFieldController->AddSnakeOnField(_snake);
+
+		AddFruit();
 	}
 
 	void Game::AddFruit()

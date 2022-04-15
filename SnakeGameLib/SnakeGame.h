@@ -39,12 +39,12 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Ширина окна
 		/// </summary>
-		int _widthWindow = 640;
+		int _widthWindow = 1000;
 
 		/// <summary>
 		/// Высота окна
 		/// </summary>
-		int _heightWindow = 480;
+		int _heightWindow = 1000;
 
 		/// <summary>
 		/// Отрисовка

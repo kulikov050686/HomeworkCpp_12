@@ -110,7 +110,7 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Смещение
 		/// </summary>
-		int _shift = 0;
+		GLint _shift = 0;
 
 		/// <summary>
 		/// Инициализация
