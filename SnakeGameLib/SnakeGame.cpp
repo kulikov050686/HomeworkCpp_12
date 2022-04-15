@@ -27,9 +27,10 @@ namespace SnakeGameLib
         gluOrtho2D(0.0, _widthWindow, 0.0, _heightWindow);
 
         glutReshapeFunc(Reshape);
-        glutTimerFunc(40, Timer, 1);
+        glutTimerFunc(500, Timer, 1);
         glutDisplayFunc(Display);
         glutKeyboardFunc(Keyboard);
+        glutIdleFunc(Idel);
 
         glutMainLoop();        
 	}
@@ -48,7 +49,8 @@ namespace SnakeGameLib
     {
         _game->Timer(value);
 
-        //glutTimerFunc(50, Timer, 1);
+        glutPostRedisplay();
+        glutTimerFunc(500, Timer, 1);
     }
 
     void SnakeGame::Reshape(int width, int height)
@@ -59,5 +61,11 @@ namespace SnakeGameLib
     void SnakeGame::Keyboard(unsigned char key, int x, int y)
     {
         _game->Keyboard(key, x, y);
+    }
+    
+    void SnakeGame::Idel()
+    {
+        //_game->Idel();
+        //glutPostRedisplay();
     }
 }

@@ -73,7 +73,16 @@ namespace SnakeGameLib
 	}
 
 	void Game::Timer(int value)
-	{		
+	{
+		_gameFieldController->ClearField();
+		_gameFieldController->AddFruitOnField(_fruit);
+		SnakeMovement();
+		_gameFieldController->AddSnakeOnField(_snake);
+
+		if (GetOnSnake(_fruit, _snake))
+		{
+			AddFruit();
+		}
 	}
 
 	void Game::Reshape(int width, int height)
@@ -91,6 +100,9 @@ namespace SnakeGameLib
 		}
 
 		if (_shift == 0) _shift = 10;
+
+		//glMatrixMode(GL_MODELVIEW);		
+		//glLoadIdentity();
 		
 		_widthWindow = width;
 		_heightWindow = height;				
@@ -98,12 +110,27 @@ namespace SnakeGameLib
 
 	void Game::Keyboard(unsigned char key, int x, int y)
 	{
+		switch (key)
+		{
+			case 119: _direction = Direction::UP; break;
+			case 115: _direction = Direction::DOWN; break;
+			case 97:  _direction = Direction::LEFT; break;
+			case 100: _direction = Direction::RIGHT; break;
+			case 27: exit(0);
+		}
+	}
+
+	void Game::Idel()
+	{
 	}
 
 	void Game::Init()
 	{
 		_numberOfPoints = 0;
-		_gameOver = false;		
+		_gameOver = false;	
+		_direction = Direction::LEFT;
+		_currentDirection = Direction::LEFT;
+
 		Point2D<size_t> point{ _gameFieldController->GetSizeField() / 2, _gameFieldController->GetSizeField() / 2 };
 
 		_snake = _entityCreator->CreateSnake(point, 2, 4);
@@ -152,7 +179,7 @@ namespace SnakeGameLib
 		glRecti(rectangleCoordinates.x, rectangleCoordinates.y, rectangleCoordinates.x + size, rectangleCoordinates.y + size);
 	}
 	
-	void Game::SnakeMovement(Direction direction)
+	void Game::SnakeMovement()
 	{
 		for (size_t i = _snake->GetNumberOfElements() - 1; i > 0; --i)
 		{
@@ -166,20 +193,48 @@ namespace SnakeGameLib
 
 		auto s = _snake->GetElement(0);
 
-		switch (direction)
+		switch (_direction)
 		{
-			case Direction::RIGHT: 
-				s.coordinates.x += 1;				
-				break;					
+			case Direction::RIGHT:
+			{
+				if (_currentDirection != Direction::LEFT) 
+				{
+					s.coordinates.x += 1;
+					_currentDirection = _direction;
+				}
+
+				break;
+			}									
 			case Direction::LEFT:
-				s.coordinates.x -= 1;				
-				break;					
+			{
+				if (_currentDirection != Direction::RIGHT) 
+				{ 
+					s.coordinates.x -= 1;
+					_currentDirection = _direction;
+				}
+
+				break;
+			}									
 			case Direction::UP:
-				s.coordinates.y += 1;				
-				break;					
+			{
+				if (_currentDirection != Direction::DOWN) 
+				{
+					s.coordinates.y += 1;
+					_currentDirection = _direction;
+				}
+
+				break;
+			}								
 			case Direction::DOWN:
-				s.coordinates.y -= 1;				
-				break;						
+			{
+				if (_currentDirection != Direction::UP)
+				{
+					s.coordinates.y -= 1;
+					_currentDirection = _direction;
+				}
+
+				break;
+			}			
 		}
 
 		_snake->UpdateElement(s);

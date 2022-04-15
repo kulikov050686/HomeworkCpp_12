@@ -39,6 +39,11 @@ public:
 	virtual void Keyboard(unsigned char key, int x, int y) = 0;
 
 	/// <summary>
+	/// 
+	/// </summary>
+	virtual void Idel() = 0;
+
+	/// <summary>
 	/// Деструктор
 	/// </summary>
 	virtual ~IGame() = default;

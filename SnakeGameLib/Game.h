@@ -56,6 +56,11 @@ namespace SnakeGameLib
 		void Keyboard(unsigned char key, int x, int y) override;
 
 		/// <summary>
+		/// 
+		/// </summary>
+		void Idel() override;
+
+		/// <summary>
 		/// Деструктор
 		/// </summary>
 		virtual ~Game() = default;
@@ -98,6 +103,11 @@ namespace SnakeGameLib
 		Direction _direction;
 
 		/// <summary>
+		/// Текущее направление
+		/// </summary>
+		Direction _currentDirection;
+
+		/// <summary>
 		/// Ширина окна
 		/// </summary>
 		int _widthWindow = 0;
@@ -124,9 +134,8 @@ namespace SnakeGameLib
 
 		/// <summary>
 		/// Движение змейки
-		/// </summary>
-		/// /// <param name="direction"> Направление </param>
-		void SnakeMovement(Direction direction);
+		/// </summary>		
+		void SnakeMovement();
 		
 		/// <summary>
 		/// Попасть на змею
