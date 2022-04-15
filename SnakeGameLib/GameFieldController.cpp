@@ -103,7 +103,7 @@ namespace SnakeGameLib
 
 	Point2D<size_t> GameFieldController::CreateRandomPoint()
 	{
-		return { Random::Next(1, _sizeField - 1), Random::Next(1, _sizeField - 1) };
+		return { Random::Next(1, _sizeField - 2), Random::Next(1, _sizeField - 2) };
 	}
 
 	void GameFieldController::InitField()

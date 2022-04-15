@@ -113,9 +113,13 @@ namespace SnakeGameLib
 		switch (key)
 		{
 			case 119: _direction = Direction::UP; break;
+			case 246: _direction = Direction::UP; break;
 			case 115: _direction = Direction::DOWN; break;
+			case 251: _direction = Direction::DOWN; break;
 			case 97:  _direction = Direction::LEFT; break;
+			case 244: _direction = Direction::LEFT; break;
 			case 100: _direction = Direction::RIGHT; break;
+			case 226: _direction = Direction::RIGHT; break;
 			case 27: exit(0);
 		}
 	}
@@ -154,7 +158,11 @@ namespace SnakeGameLib
 				case 2:					
 					_fruit = _entityCreator->CreateFruit(_gameFieldController->CreateRandomPoint(), TypeOfFruit::PEACH);
 				break;
-			}			
+			}
+
+			bool k = GetOnSnake(_fruit, _snake);
+			std::cout << k << " x=" << _fruit->GetCoordinates().x << " y= " << _fruit->GetCoordinates().y << std::endl;
+
 		} while (GetOnSnake(_fruit, _snake));
 
 		_gameFieldController->AddFruitOnField(_fruit);
