@@ -7,29 +7,29 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Локатор Контроллеров
+	/// Р›РѕРєР°С‚РѕСЂ РљРѕРЅС‚СЂРѕР»Р»РµСЂРѕРІ
 	/// </summary>
 	class ControllerLocator
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		ControllerLocator() = default;
 
 		/// <summary>
-		/// Получить контроллер игрового поля
+		/// РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅС‚СЂРѕР»Р»РµСЂ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
 		/// </summary>		
 		std::shared_ptr<GameFieldController> GetGameFieldController() { return std::make_shared<GameFieldController>(std::make_shared<GameField<uint16_t>>(40)); }
 		
 		/// <summary>
-		/// Создатель сущностей
+		/// РЎРѕР·РґР°С‚РµР»СЊ СЃСѓС‰РЅРѕСЃС‚РµР№
 		/// </summary>		
 		std::shared_ptr<EntityCreator> GetEntityCreator() { return std::make_shared<EntityCreator>(); }
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~ControllerLocator() = default;
 	};

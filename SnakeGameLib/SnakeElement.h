@@ -4,24 +4,24 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Элемент змейки
+	/// Р­Р»РµРјРµРЅС‚ Р·РјРµР№РєРё
 	/// </summary>
-	/// <typeparam name="T"> Тип элемента </typeparam>
+	/// <typeparam name="T"> РўРёРї СЌР»РµРјРµРЅС‚Р° </typeparam>
 	template <typename T>
 	struct SnakeElement
 	{
 		/// <summary>
-		/// Идентификатор
+		/// РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
 		/// </summary>
 		size_t id;
 
 		/// <summary>
-		/// Координаты
+		/// РљРѕРѕСЂРґРёРЅР°С‚С‹
 		/// </summary>
 		Point2D<size_t> coordinates;
 
 		/// <summary>
-		/// Элемент
+		/// Р­Р»РµРјРµРЅС‚
 		/// </summary>
 		T element;
 	};

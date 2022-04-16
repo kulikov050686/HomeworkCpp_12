@@ -8,72 +8,72 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Модель змейка
+	/// РњРѕРґРµР»СЊ Р·РјРµР№РєР°
 	/// </summary>
 	class Snake : public ISnake<uint16_t>
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
-		/// <param name="initialCoordinates"> Начальные координаты </param>
-		/// <param name="elementData"> Данные элементов </param>
-		/// <param name="numberOfElements"> Начальное количество элементов </param>		
+		/// <param name="initialCoordinates"> РќР°С‡Р°Р»СЊРЅС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ </param>
+		/// <param name="elementData"> Р”Р°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚РѕРІ </param>
+		/// <param name="numberOfElements"> РќР°С‡Р°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ </param>		
 		Snake(Point2D<size_t> initialCoordinates, uint16_t elementData, size_t numberOfElements = 1);
 
 		/// <summary>
-		/// Задать элемент
+		/// Р—Р°РґР°С‚СЊ СЌР»РµРјРµРЅС‚
 		/// </summary>
-		/// <param name="element"> Элемент </param>
+		/// <param name="element"> Р­Р»РµРјРµРЅС‚ </param>
 		void SetElement(SnakeElement<uint16_t> element) override;
 
 		/// <summary>
-		/// Получить элемент
+		/// РџРѕР»СѓС‡РёС‚СЊ СЌР»РµРјРµРЅС‚
 		/// </summary>
-		/// <param name="itemNumber"> Номер элемента </param>		
+		/// <param name="itemNumber"> РќРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р° </param>		
 		SnakeElement<uint16_t> GetElement(size_t itemNumber) override;
 
 		/// <summary>
-		/// Обновить элемент
+		/// РћР±РЅРѕРІРёС‚СЊ СЌР»РµРјРµРЅС‚
 		/// </summary>
-		/// <param name="newElement"> Новый элемент </param>
+		/// <param name="newElement"> РќРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ </param>
 		void UpdateElement(SnakeElement<uint16_t> newElement) override;
 	
 		/// <summary>
-		/// Количество элементов
+		/// РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ
 		/// </summary>
 		size_t GetNumberOfElements() override;
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~Snake() = default;
 
 	private:
 
 		/// <summary>
-		/// Количество элементов змейки
+		/// РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ Р·РјРµР№РєРё
 		/// </summary>
 		size_t _numberOfElements = 1;
 
 		/// <summary>
-		/// Номера идентификатора
+		/// РќРѕРјРµСЂР° РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂР°
 		/// </summary>
 		size_t _lastId = 0;
 
 		/// <summary>
-		/// Змейка
+		/// Р—РјРµР№РєР°
 		/// </summary>
 		std::vector<SnakeElement<uint16_t>> _snake{ _numberOfElements };
 
 		/// <summary>
-		/// Данные элемента
+		/// Р”Р°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚Р°
 		/// </summary>
 		uint16_t _elementData = 0;
 
 		/// <summary>
-		/// Инициализация
+		/// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 		/// </summary>
 		void Init();
 	};

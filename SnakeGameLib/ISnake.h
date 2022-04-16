@@ -6,44 +6,44 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Интерфейс модели змейка
+	/// РРЅС‚РµСЂС„РµР№СЃ РјРѕРґРµР»Рё Р·РјРµР№РєР°
 	/// </summary>
-	/// <typeparam name="T"> Тип данных элемента </typeparam>
+	/// <typeparam name="T"> РўРёРї РґР°РЅРЅС‹С… СЌР»РµРјРµРЅС‚Р° </typeparam>
 	template <typename T>
 	class ISnake
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		ISnake() = default;
 
 		/// <summary>
-		/// Задать элемент
+		/// Р—Р°РґР°С‚СЊ СЌР»РµРјРµРЅС‚
 		/// </summary>
-		/// <param name="element"> Элемент </param>
+		/// <param name="element"> Р­Р»РµРјРµРЅС‚ </param>
 		virtual void SetElement(SnakeElement<T> element) = 0;
 
 		/// <summary>
-		/// Получить элемент
+		/// РџРѕР»СѓС‡РёС‚СЊ СЌР»РµРјРµРЅС‚
 		/// </summary>
-		/// <param name="itemNumber"> Номер элемента </param>		
+		/// <param name="itemNumber"> РќРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р° </param>		
 		virtual SnakeElement<T> GetElement(size_t itemNumber) = 0;
 
 		/// <summary>
-		/// Обновить элемент
+		/// РћР±РЅРѕРІРёС‚СЊ СЌР»РµРјРµРЅС‚
 		/// </summary>
-		/// <param name="newElement"> Элемент </param>
+		/// <param name="newElement"> Р­Р»РµРјРµРЅС‚ </param>
 		virtual void UpdateElement(SnakeElement<T> newElement) = 0;
 		
 		/// <summary>
-		/// Получить количество элементов
+		/// РџРѕР»СѓС‡РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ
 		/// </summary>
 		virtual size_t GetNumberOfElements() = 0;
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~ISnake() = default;
 	};

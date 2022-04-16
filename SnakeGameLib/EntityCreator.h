@@ -10,36 +10,36 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Создатель сущностей
+	/// РЎРѕР·РґР°С‚РµР»СЊ СЃСѓС‰РЅРѕСЃС‚РµР№
 	/// </summary>
 	class EntityCreator
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		EntityCreator() = default;
 		
 		/// <summary>
-		/// Создать фрукт
+		/// РЎРѕР·РґР°С‚СЊ С„СЂСѓРєС‚
 		/// </summary>
-		/// <param name="coordinates"> Координаты фрукта </param>
-		/// <param name="typeOfFruit"> Тип фрукта </param>		
+		/// <param name="coordinates"> РљРѕРѕСЂРґРёРЅР°С‚С‹ С„СЂСѓРєС‚Р° </param>
+		/// <param name="typeOfFruit"> РўРёРї С„СЂСѓРєС‚Р° </param>		
 		std::shared_ptr<IFruit> CreateFruit(Point2D<size_t> coordinates, TypeOfFruit typeOfFruit);
 
 		/// <summary>
-		/// Создать змейку
+		/// РЎРѕР·РґР°С‚СЊ Р·РјРµР№РєСѓ
 		/// </summary>
-		/// <param name="initialCoordinates"> Начальные координаты </param>
-		/// <param name="elementData"> Данные элемента змейки </param>
-		/// <param name="numberOfElements"> Количество элементов змейки </param>		
+		/// <param name="initialCoordinates"> РќР°С‡Р°Р»СЊРЅС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ </param>
+		/// <param name="elementData"> Р”Р°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚Р° Р·РјРµР№РєРё </param>
+		/// <param name="numberOfElements"> РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ Р·РјРµР№РєРё </param>		
 		std::shared_ptr<ISnake<uint16_t>> CreateSnake(Point2D<size_t> initialCoordinates,
 													  uint16_t elementData,
 													  size_t numberOfElements = 4);
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~EntityCreator() = default;
 	};

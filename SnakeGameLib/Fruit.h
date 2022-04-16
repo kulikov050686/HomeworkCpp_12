@@ -5,43 +5,43 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Модель фрукт
+	/// РњРѕРґРµР»СЊ С„СЂСѓРєС‚
 	/// </summary>
 	class Fruit : public IFruit
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
-		/// <param name="coordinates"> Координаты фрукта </param>
-		/// <param name="typeOfFruit"> Тип фрукта </param>
+		/// <param name="coordinates"> РљРѕРѕСЂРґРёРЅР°С‚С‹ С„СЂСѓРєС‚Р° </param>
+		/// <param name="typeOfFruit"> РўРёРї С„СЂСѓРєС‚Р° </param>
 		Fruit(Point2D<size_t> coordinates, TypeOfFruit typeOfFruit);
 
 		/// <summary>
-		/// Получить координаты фрукта
+		/// РџРѕР»СѓС‡РёС‚СЊ РєРѕРѕСЂРґРёРЅР°С‚С‹ С„СЂСѓРєС‚Р°
 		/// </summary>		
 		Point2D<size_t> GetCoordinates() override;
 
 		/// <summary>
-		/// Получить тип фрукта
+		/// РџРѕР»СѓС‡РёС‚СЊ С‚РёРї С„СЂСѓРєС‚Р°
 		/// </summary>		
 		TypeOfFruit GetTypeOfFruit() override;
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~Fruit() = default;
 
 	private:
 
 		/// <summary>
-		/// Координаты
+		/// РљРѕРѕСЂРґРёРЅР°С‚С‹
 		/// </summary>
 		Point2D<size_t> _coordinates{ 0,0 };
 
 		/// <summary>
-		/// Тип фрукта
+		/// РўРёРї С„СЂСѓРєС‚Р°
 		/// </summary>
 		TypeOfFruit _typeOfFruit = TypeOfFruit::APPLE;
 	};

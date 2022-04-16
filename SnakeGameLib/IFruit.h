@@ -5,39 +5,39 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Интерфейс модели фрукт
+	/// РРЅС‚РµСЂС„РµР№СЃ РјРѕРґРµР»Рё С„СЂСѓРєС‚
 	/// </summary>
 	class IFruit
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		IFruit() = default;
 
 		/// <summary>
-		/// Получить координаты фрукта
+		/// РџРѕР»СѓС‡РёС‚СЊ РєРѕРѕСЂРґРёРЅР°С‚С‹ С„СЂСѓРєС‚Р°
 		/// </summary>		
 		virtual Point2D<size_t> GetCoordinates() = 0;
 
 		/// <summary>
-		/// Получить тип фрукта
+		/// РџРѕР»СѓС‡РёС‚СЊ С‚РёРї С„СЂСѓРєС‚Р°
 		/// </summary>		
 		virtual TypeOfFruit GetTypeOfFruit() = 0;
 				
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~IFruit() = default;
 
 		/// <summary>
-		/// Запрет присваивания
+		/// Р—Р°РїСЂРµС‚ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 		/// </summary>		
 		IFruit& operator = (const IFruit&) = delete;
 
 		/// <summary>
-		/// Запрет копироваия
+		/// Р—Р°РїСЂРµС‚ РєРѕРїРёСЂРѕРІР°РёСЏ
 		/// </summary>		
 		IFruit(const IFruit&) = delete;
 	};

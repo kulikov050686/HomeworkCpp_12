@@ -3,24 +3,24 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Цвета
+	/// Р¦РІРµС‚Р°
 	/// </summary>
-	/// <typeparam name="T"> Тип данных цвета </typeparam>
+	/// <typeparam name="T"> РўРёРї РґР°РЅРЅС‹С… С†РІРµС‚Р° </typeparam>
 	template <typename T>
 	struct ColorRGB
 	{
 		/// <summary>
-		/// Красный
+		/// РљСЂР°СЃРЅС‹Р№
 		/// </summary>
 		T r;
 
 		/// <summary>
-		/// Злёный
+		/// Р—Р»С‘РЅС‹Р№
 		/// </summary>
 		T g;
 
 		/// <summary>
-		/// Синий
+		/// РЎРёРЅРёР№
 		/// </summary>
 		T b;
 	};

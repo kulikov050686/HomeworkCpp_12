@@ -3,22 +3,22 @@
 namespace SnakeGameLib
 {
 	/// <summary>
-	/// Тип фрукта
+	/// РўРёРї С„СЂСѓРєС‚Р°
 	/// </summary>
 	enum class TypeOfFruit
 	{
 		/// <summary>
-		/// Яблоко
+		/// РЇР±Р»РѕРєРѕ
 		/// </summary>
 		APPLE = 0,
 
 		/// <summary>
-		/// Груша
+		/// Р“СЂСѓС€Р°
 		/// </summary>
 		PEAR = 1,
 
 		/// <summary>
-		/// Персик
+		/// РџРµСЂСЃРёРє
 		/// </summary>
 		PEACH = 2
 	};
