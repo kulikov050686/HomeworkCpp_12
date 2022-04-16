@@ -22,11 +22,10 @@ namespace SnakeGameLib
 		/// <param name="numberOfElements"> Начальное количество элементов </param>		
 		Snake(Point2D<size_t> initialCoordinates, uint16_t elementData, size_t numberOfElements = 1);
 
-		/// <summary>
+		// <summary>
 		/// Задать элемент
-		/// </summary>
-		/// <param name="element"> Элемент </param>
-		void SetElement(SnakeElement<uint16_t> element) override;
+		/// </summary>		
+		void SetElement() override;
 
 		/// <summary>
 		/// Получить элемент
@@ -53,11 +52,6 @@ namespace SnakeGameLib
 	private:
 
 		/// <summary>
-		/// Количество элементов змейки
-		/// </summary>
-		size_t _numberOfElements = 1;
-
-		/// <summary>
 		/// Номера идентификатора
 		/// </summary>
 		size_t _lastId = 0;
@@ -65,7 +59,7 @@ namespace SnakeGameLib
 		/// <summary>
 		/// Змейка
 		/// </summary>
-		std::vector<SnakeElement<uint16_t>> _snake{ _numberOfElements };
+		std::vector<SnakeElement<uint16_t>> _snake;
 
 		/// <summary>
 		/// Данные элемента

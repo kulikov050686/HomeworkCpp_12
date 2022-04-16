@@ -3,70 +3,70 @@
 #include "IGameMap.h"
 
 /// <summary>
-/// Модель игровой карты
+/// РњРѕРґРµР»СЊ РёРіСЂРѕРІРѕР№ РєР°СЂС‚С‹
 /// </summary>
-/// <typeparam name="T"> Тип данных элемента игровой карты </typeparam>
+/// <typeparam name="T"> РўРёРї РґР°РЅРЅС‹С… СЌР»РµРјРµРЅС‚Р° РёРіСЂРѕРІРѕР№ РєР°СЂС‚С‹ </typeparam>
 template <typename T>
 class GameMap : public IGameMap<T>
 {
 public:
 
 	/// <summary>
-	/// Конструктор
+	/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
-	/// <param name="numberOfColumns"> Количество колонок </param>
-	/// <param name="numberOfRows"> Количество рядов </param>
+	/// <param name="numberOfColumns"> РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РѕРЅРѕРє </param>
+	/// <param name="numberOfRows"> РљРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ </param>
 	GameMap(size_t numberOfColumns, size_t numberOfRows);
 	
 	// <summary>
-	/// Получить количество рядов
+	/// РџРѕР»СѓС‡РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ
 	/// </summary>	
 	size_t GetNumberOfRows() override;
 
 	/// <summary>
-	/// Получить количество колонок
+	/// РџРѕР»СѓС‡РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РѕРЅРѕРє
 	/// </summary>	
 	size_t GetNumberOfColumns() override;
 
 	/// <summary>
-	/// Получить данные элемента
+	/// РџРѕР»СѓС‡РёС‚СЊ РґР°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚Р°
 	/// </summary>
-	/// <param name="row"> Номер ряда </param>
-	/// <param name="column"> Номер колонки </param>	
+	/// <param name="row"> РќРѕРјРµСЂ СЂСЏРґР° </param>
+	/// <param name="column"> РќРѕРјРµСЂ РєРѕР»РѕРЅРєРё </param>	
 	T GetElement(size_t row, size_t column) override;
 
 	/// <summary>
-	/// Задать данные элемента
+	/// Р—Р°РґР°С‚СЊ РґР°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚Р°
 	/// </summary>
-	/// <param name="row"> Номер ряда </param>
-	/// <param name="column"> Номер столбца </param>
-	/// <param name="data"> Данные </param>	
+	/// <param name="row"> РќРѕРјРµСЂ СЂСЏРґР° </param>
+	/// <param name="column"> РќРѕРјРµСЂ СЃС‚РѕР»Р±С†Р° </param>
+	/// <param name="data"> Р”Р°РЅРЅС‹Рµ </param>	
 	void SetElement(size_t row, size_t column, T data) override;
 
 	/// <summary>
-	/// Деструктор
+	/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
 	virtual ~GameMap() = default;
 
 public:
 
 	/// <summary>
-	/// Количество колонок
+	/// РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РѕРЅРѕРє
 	/// </summary>
 	size_t _numberOfColumns = 0;
 
 	/// <summary>
-	/// Количество рядов
+	/// РљРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ
 	/// </summary>
 	size_t _numberOfRows = 0;
 
 	/// <summary>
-	/// Игровое карта
+	/// РРіСЂРѕРІРѕРµ РєР°СЂС‚Р°
 	/// </summary>
 	std::vector<std::vector<T>> _gameMap;
 
 	/// <summary>
-	/// Инициализация
+	/// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 	/// </summary>
 	void Init();
 };

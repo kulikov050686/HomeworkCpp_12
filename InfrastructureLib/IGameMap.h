@@ -1,56 +1,56 @@
 #pragma once
 
 /// <summary>
-/// Интерфейс модели игровой карты
+/// РРЅС‚РµСЂС„РµР№СЃ РјРѕРґРµР»Рё РёРіСЂРѕРІРѕР№ РєР°СЂС‚С‹
 /// </summary>
-/// <typeparam name="T"> Тип данных элемента игровой карты </typeparam>
+/// <typeparam name="T"> РўРёРї РґР°РЅРЅС‹С… СЌР»РµРјРµРЅС‚Р° РёРіСЂРѕРІРѕР№ РєР°СЂС‚С‹ </typeparam>
 template <typename T>
 class IGameMap
 {
 public:
 
 	/// <summary>
-	/// Конструктор
+	/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
 	IGameMap() = default;
 	
 	// <summary>
-	/// Получить количество рядов
+	/// РџРѕР»СѓС‡РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ
 	/// </summary>	
 	virtual size_t GetNumberOfRows() = 0;
 
 	/// <summary>
-	/// Получить количество колонок
+	/// РџРѕР»СѓС‡РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РѕРЅРѕРє
 	/// </summary>	
 	virtual size_t GetNumberOfColumns() = 0;
 
 	/// <summary>
-	/// Получить данные элемента
+	/// РџРѕР»СѓС‡РёС‚СЊ РґР°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚Р°
 	/// </summary>
-	/// <param name="row"> Номер ряда </param>
-	/// <param name="column"> Номер колонки </param>	
+	/// <param name="row"> РќРѕРјРµСЂ СЂСЏРґР° </param>
+	/// <param name="column"> РќРѕРјРµСЂ РєРѕР»РѕРЅРєРё </param>	
 	virtual T GetElement(size_t row, size_t column) = 0;
 
 	/// <summary>
-	/// Задать данные элемента
+	/// Р—Р°РґР°С‚СЊ РґР°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚Р°
 	/// </summary>
-	/// <param name="row"> Номер ряда </param>
-	/// <param name="column"> Номер столбца </param>
-	/// <param name="data"> Данные </param>	
+	/// <param name="row"> РќРѕРјРµСЂ СЂСЏРґР° </param>
+	/// <param name="column"> РќРѕРјРµСЂ СЃС‚РѕР»Р±С†Р° </param>
+	/// <param name="data"> Р”Р°РЅРЅС‹Рµ </param>	
 	virtual void SetElement(size_t row, size_t column, T data) = 0;
 
 	/// <summary>
-	/// Деструктор
+	/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
 	virtual ~IGameMap() = default;
 
 	/// <summary>
-	/// Запрет присваивания
+	/// Р—Р°РїСЂРµС‚ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 	/// </summary>	
 	IGameMap& operator = (const IGameMap&) = delete;
 
 	/// <summary>
-	/// Запрет копирования
+	/// Р—Р°РїСЂРµС‚ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	/// </summary>	
 	IGameMap(const IGameMap&) = delete;
 };

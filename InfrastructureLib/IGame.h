@@ -1,50 +1,50 @@
 #pragma once
 
 /// <summary>
-/// Интерфейс игра
+/// РРЅС‚РµСЂС„РµР№СЃ РёРіСЂР°
 /// </summary>
 class IGame
 {
 public:
 
 	/// <summary>
-	/// Конструктор
+	/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
 	IGame() = default;
 
 	/// <summary>
-	/// Отрисовка
+	/// РћС‚СЂРёСЃРѕРІРєР°
 	/// </summary>
 	virtual void Draw() = 0;
 
 	/// <summary>
-	/// Обработка событий таймера
+	/// РћР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№ С‚Р°Р№РјРµСЂР°
 	/// </summary>
-	/// <param name="value"> Параметр </param>
+	/// <param name="value"> РџР°СЂР°РјРµС‚СЂ </param>
 	virtual void Timer(int value) = 0;
 
 	/// <summary>
-	/// Обработка событий изменения размеров окна
+	/// РћР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№ РёР·РјРµРЅРµРЅРёСЏ СЂР°Р·РјРµСЂРѕРІ РѕРєРЅР°
 	/// </summary>
-	/// <param name="width"> Ширина окна </param>
-	/// <param name="height"> Высота окна </param>
+	/// <param name="width"> РЁРёСЂРёРЅР° РѕРєРЅР° </param>
+	/// <param name="height"> Р’С‹СЃРѕС‚Р° РѕРєРЅР° </param>
 	virtual void Reshape(int width, int height) = 0;
 
 	/// <summary>
-	/// Обработка событий клавиатуры
+	/// РћР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№ РєР»Р°РІРёР°С‚СѓСЂС‹
 	/// </summary>
-	/// <param name="key"> Код клавиши </param>
-	/// <param name="x"> Координата x мыши </param>
-	/// <param name="y"> Координата y мыши </param>
+	/// <param name="key"> РљРѕРґ РєР»Р°РІРёС€Рё </param>
+	/// <param name="x"> РљРѕРѕСЂРґРёРЅР°С‚Р° x РјС‹С€Рё </param>
+	/// <param name="y"> РљРѕРѕСЂРґРёРЅР°С‚Р° y РјС‹С€Рё </param>
 	virtual void Keyboard(unsigned char key, int x, int y) = 0;
 
 	/// <summary>
-	/// Обработка событий времени бездействия
+	/// РћР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№ РІСЂРµРјРµРЅРё Р±РµР·РґРµР№СЃС‚РІРёСЏ
 	/// </summary>
 	virtual void Idel() = 0;
 
 	/// <summary>
-	/// Деструктор
+	/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
 	virtual ~IGame() = default;
 };

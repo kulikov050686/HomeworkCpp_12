@@ -151,5 +151,11 @@ namespace SnakeGameLib
 		/// <param name="color"> Цвет </param>
 		/// <param name="size"> Размер </param>
 		void Rectangle(Point2D<GLint> rectangleCoordinates, ColorRGB<GLfloat> color, GLint size);
+
+		/// <summary>
+		/// Пересекающаяся змея
+		/// </summary>
+		/// <param name="snake"> Змейка </param>		
+		bool IntersectingSnake(std::shared_ptr<ISnake<uint16_t>> snake);
 	};
 }

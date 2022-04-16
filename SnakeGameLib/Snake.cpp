@@ -7,8 +7,8 @@ namespace SnakeGameLib
 	{
 		if (numberOfElements == 0) throw "Error!!!";
 
-		_numberOfElements = numberOfElements;
 		_elementData = elementData;
+		_snake.resize(numberOfElements);
 
 		_snake[0].id = _lastId;
 		_snake[0].coordinates = initialCoordinates;
@@ -18,14 +18,15 @@ namespace SnakeGameLib
 		if (numberOfElements > 1) Init();
 	}
 
-	void Snake::SetElement(SnakeElement<uint16_t> element)
+	void Snake::SetElement()
 	{
-		for (auto i = _snake.begin(); i != _snake.end(); i++)
-		{
-			if (i->coordinates == element.coordinates) return;
-		}
+		SnakeElement<uint16_t> element;
 
 		element.id = _lastId;
+		element.coordinates.x = 0;
+		element.coordinates.y = 0;
+		element.element = _elementData;
+
 		_snake.push_back(element);
 		_lastId++;
 	}
@@ -47,24 +48,24 @@ namespace SnakeGameLib
 				key = !key;
 			}
 		}
-	}	
-	
+	}
+
 	size_t Snake::GetNumberOfElements()
 	{
-		return _numberOfElements;
+		return _snake.size();
 	}
 
 	void Snake::Init()
 	{
-		for (size_t i = 1; i < _numberOfElements; i++)
+		for (size_t i = 1; i < _snake.size(); i++)
 		{
 			SnakeElement<uint16_t> element;
 			element.id = _lastId;
 			element.coordinates.x = _snake[0].coordinates.x + i;
 			element.coordinates.y = _snake[0].coordinates.y;
 			element.element = _elementData;
-			
-			_snake.push_back(element);
+
+			_snake[i] = element;
 			_lastId++;
 		}
 	}

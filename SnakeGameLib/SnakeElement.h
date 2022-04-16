@@ -24,5 +24,19 @@ namespace SnakeGameLib
 		/// Элемент
 		/// </summary>
 		T element;
+
+		/// <summary>
+		/// Присваивание
+		/// </summary>		
+		SnakeElement<T>& operator = (const SnakeElement<T>& obj)
+		{
+			if (this == &obj) return *this;
+
+			coordinates = obj.coordinates;
+			element = obj.element;
+			id = obj.id;
+
+			return *this;
+		}
 	};
 }

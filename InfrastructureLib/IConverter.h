@@ -1,41 +1,41 @@
 #pragma once
 
 /// <summary>
-/// Интерфейс конвертера
+/// РРЅС‚РµСЂС„РµР№СЃ РєРѕРЅРІРµСЂС‚РµСЂР°
 /// </summary>
-/// <typeparam name="inputType"> Входной тип данных </typeparam>
-/// <typeparam name="outputType"> Выходной тип данных </typeparam>
+/// <typeparam name="inputType"> Р’С…РѕРґРЅРѕР№ С‚РёРї РґР°РЅРЅС‹С… </typeparam>
+/// <typeparam name="outputType"> Р’С‹С…РѕРґРЅРѕР№ С‚РёРї РґР°РЅРЅС‹С… </typeparam>
 template <typename inputType, typename outputType>
 class IConverter
 {
 public:
 	/// <summary>
-	/// Конструктор
+	/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
 	IConverter() = default;
 
 	/// <summary>
-	/// Преобразует тип inputType в тип outputType
+	/// РџСЂРµРѕР±СЂР°Р·СѓРµС‚ С‚РёРї inputType РІ С‚РёРї outputType
 	/// </summary>	
 	virtual outputType Convert(const inputType&) = 0;
 
 	/// <summary>
-	/// Преобразует тип outputType в тип inputType
+	/// РџСЂРµРѕР±СЂР°Р·СѓРµС‚ С‚РёРї outputType РІ С‚РёРї inputType
 	/// </summary>	
 	virtual inputType ConvertBack(const outputType&) = 0;
 
 	/// <summary>
-	/// Деструктор
+	/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	/// </summary>
 	virtual ~IConverter() = default;
 
 	/// <summary>
-	/// Запрет копирования
+	/// Р—Р°РїСЂРµС‚ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	/// </summary>	
 	IConverter(const IConverter&) = delete;
 
 	/// <summary>
-	/// Запрет присваивания
+	/// Р—Р°РїСЂРµС‚ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 	/// </summary>	
 	IConverter& operator = (const IConverter&) = delete;
 };

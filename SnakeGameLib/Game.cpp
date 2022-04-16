@@ -77,10 +77,15 @@ namespace SnakeGameLib
 		_gameFieldController->ClearField();
 		_gameFieldController->AddFruitOnField(_fruit);
 		SnakeMovement();
+
+		if (!_gameFieldController->BelongingToPointOfGameArea(_snake->GetElement(0).coordinates)) exit(0);
+		if (IntersectingSnake(_snake)) exit(0);
+
 		_gameFieldController->AddSnakeOnField(_snake);
 
 		if (GetOnSnake(_fruit, _snake))
 		{
+			_snake->SetElement();
 			AddFruit();
 		}
 	}
@@ -181,6 +186,22 @@ namespace SnakeGameLib
 	{
 		glColor3f(color.r, color.g, color.b);
 		glRecti(rectangleCoordinates.x, rectangleCoordinates.y, rectangleCoordinates.x + size, rectangleCoordinates.y + size);
+	}
+
+	bool Game::IntersectingSnake(std::shared_ptr<ISnake<uint16_t>> snake)
+	{
+		if (snake->GetNumberOfElements() > 4)
+		{
+			for (size_t i = 4; i < snake->GetNumberOfElements(); i++)
+			{
+				if (snake->GetElement(0).coordinates == snake->GetElement(i).coordinates)
+				{
+					return true;
+				}
+			}
+		}		
+
+		return false;
 	}
 	
 	void Game::SnakeMovement()

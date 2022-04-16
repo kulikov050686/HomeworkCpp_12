@@ -21,9 +21,8 @@ namespace SnakeGameLib
 
 		/// <summary>
 		/// Задать элемент
-		/// </summary>
-		/// <param name="element"> Элемент </param>
-		virtual void SetElement(SnakeElement<T> element) = 0;
+		/// </summary>		
+		virtual void SetElement() = 0;
 
 		/// <summary>
 		/// Получить элемент
