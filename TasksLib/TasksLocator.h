@@ -12,6 +12,7 @@
 #include "Task9.h"
 #include "../SnakeGameLib/Game.h"
 #include "../SnakeGameLib/ControllerLocator.h"
+#include "../TetrisGameLib/Game.h"
 
 /// <summary>
 /// Локатор задач
@@ -76,7 +77,13 @@ public:
 	/// <summary>
 	/// Задача 8
 	/// </summary>	
-	std::shared_ptr<ITask> GetTask8() { return std::make_shared<Task8>(std::make_shared<TetrisGameLib::TetrisGame>()); }
+	std::shared_ptr<ITask> GetTask8() 
+	{
+		auto game = std::make_shared<TetrisGameLib::Game>();
+		auto tetrisGame = std::make_shared<TetrisGameLib::TetrisGame>(game);
+
+		return std::make_shared<Task8>(tetrisGame);
+	}
 
 	/// <summary>
 	/// Задача 9

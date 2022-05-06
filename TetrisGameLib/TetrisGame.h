@@ -1,29 +1,34 @@
 #pragma once
 #include <locale.h>
 #include <memory>
+#include "../InfrastructureLib/IGame.h"
 
 namespace TetrisGameLib
 {
 	/// <summary>
-	/// Игра тетрис
+	/// РРіСЂР° С‚РµС‚СЂРёСЃ
 	/// </summary>
 	class TetrisGame
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
-		TetrisGame() = default;
+		TetrisGame(std::shared_ptr<IGame> game);
 
 		/// <summary>
-		/// Запуск игры
+		/// Р—Р°РїСѓСЃРє РёРіСЂС‹
 		/// </summary>
 		void Run();
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~TetrisGame() = default;
+
+	private:
+
+		static std::shared_ptr<IGame> _game;
 	};
 }
