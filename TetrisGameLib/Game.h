@@ -1,5 +1,6 @@
 #pragma once
 #include "../InfrastructureLib/IGame.h"
+#include "ControllerLocator.h"
 
 namespace TetrisGameLib
 {
@@ -13,7 +14,7 @@ namespace TetrisGameLib
 		/// <summary>
 		/// Конструктор
 		/// </summary>
-		Game() = default;
+		Game(std::shared_ptr<ControllerLocator> controllerLocator);
 
 		/// <summary>
 		/// Отрисовка
@@ -52,5 +53,10 @@ namespace TetrisGameLib
 		virtual ~Game() = default;
 
 	private:
+
+		/// <summary>
+		/// Контроллер игровой карты
+		/// </summary>
+		std::shared_ptr<GameMapController> _gameMapController;
 	};
 }

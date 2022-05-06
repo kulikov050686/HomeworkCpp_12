@@ -79,7 +79,8 @@ public:
 	/// </summary>	
 	std::shared_ptr<ITask> GetTask8() 
 	{
-		auto game = std::make_shared<TetrisGameLib::Game>();
+		auto controller = std::make_shared<TetrisGameLib::ControllerLocator>();
+		auto game = std::make_shared<TetrisGameLib::Game>(controller);
 		auto tetrisGame = std::make_shared<TetrisGameLib::TetrisGame>(game);
 
 		return std::make_shared<Task8>(tetrisGame);
