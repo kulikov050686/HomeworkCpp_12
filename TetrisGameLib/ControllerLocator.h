@@ -7,24 +7,24 @@
 namespace TetrisGameLib
 {
 	/// <summary>
-	/// Локатор контроллеров
+	/// Р›РѕРєР°С‚РѕСЂ РєРѕРЅС‚СЂРѕР»Р»РµСЂРѕРІ
 	/// </summary>
 	class ControllerLocator
 	{
 	public:
 
 		/// <summary>
-		/// Конструктор
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		ControllerLocator() = default;
 
 		/// <summary>
-		/// Получить контроллер игровой карты
+		/// РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅС‚СЂРѕР»Р»РµСЂ РёРіСЂРѕРІРѕР№ РєР°СЂС‚С‹
 		/// </summary>		
 		std::shared_ptr<GameMapController> GetGameMapController() { return std::make_shared<GameMapController>(std::make_shared<GameMap<uint16_t>>(30, 30)); }
 
 		/// <summary>
-		/// Деструктор
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 		/// </summary>
 		virtual ~ControllerLocator() = default;
 	};
