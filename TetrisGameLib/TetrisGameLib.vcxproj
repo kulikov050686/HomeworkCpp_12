@@ -159,6 +159,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ColorRGB.h" />
     <ClInclude Include="ControllerLocator.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameMapController.h" />

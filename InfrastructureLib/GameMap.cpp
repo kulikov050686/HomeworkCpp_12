@@ -8,6 +8,8 @@ GameMap<T>::GameMap(size_t numberOfColumns, size_t numberOfRows)
 
 	_numberOfColumns = numberOfColumns;
 	_numberOfRows = numberOfRows;
+
+	Init();
 }
 
 template<typename T>

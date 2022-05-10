@@ -26,10 +26,10 @@ namespace TetrisGameLib
 		glLoadIdentity();
 		gluOrtho2D(0.0, _widthWindow, 0.0, _heightWindow);
 
-		//glutReshapeFunc(Reshape);
-		//glutTimerFunc(300, Timer, 1);
+		glutReshapeFunc(Reshape);
+		glutTimerFunc(300, Timer, 1);
 		glutDisplayFunc(Display);
-		//glutKeyboardFunc(Keyboard);
+		glutKeyboardFunc(Keyboard);
 
 		glutMainLoop();
 	}
@@ -48,8 +48,8 @@ namespace TetrisGameLib
 	{
 		_game->Timer(value);
 
-		//glutPostRedisplay();
-		//glutTimerFunc(300, Timer, 1);
+		glutPostRedisplay();
+		glutTimerFunc(300, Timer, 1);
 	}
 
 	void TetrisGame::Reshape(int width, int height)

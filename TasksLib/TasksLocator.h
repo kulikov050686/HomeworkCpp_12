@@ -83,7 +83,7 @@ public:
 		auto game = std::make_shared<TetrisGameLib::Game>(controller);
 		auto tetrisGame = std::make_shared<TetrisGameLib::TetrisGame>(game);
 
-		return std::make_shared<Task8>(tetrisGame);
+		return  std::make_shared<Task8>(tetrisGame);
 	}
 
 	/// <summary>

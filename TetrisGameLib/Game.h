@@ -1,6 +1,9 @@
 #pragma once
+#include <GL/GL.h>
+#include <memory>
 #include "../InfrastructureLib/IGame.h"
 #include "ControllerLocator.h"
+#include "ColorRGB.h"
 
 namespace TetrisGameLib
 {
@@ -58,5 +61,38 @@ namespace TetrisGameLib
 		/// Контроллер игровой карты
 		/// </summary>
 		std::shared_ptr<GameMapController> _gameMapController;
+
+		/// <summary>
+		/// Ширина окна
+		/// </summary>
+		int _widthWindow = 0;
+
+		/// <summary>
+		/// Высота окна
+		/// </summary>
+		int _heightWindow = 0;
+
+		/// <summary>
+		/// Смещение
+		/// </summary>
+		GLint _shift = 0;
+
+		/// <summary>
+		/// Количество очков
+		/// </summary>
+		size_t _numberOfPoints = 0;
+
+		/// <summary>
+		/// Завершение игры
+		/// </summary>
+		bool _gameOver = false;
+
+		/// <summary>
+		/// Прямоугольник
+		/// </summary>		
+		/// <param name="rectangleCoordinates"> Координаы прямоугольника </param>
+		/// <param name="color"> Цвет </param>
+		/// <param name="size"> Размер </param>
+		void Rectangle(Point2D<GLint> rectangleCoordinates, ColorRGB<GLfloat> color, GLint size);
 	};
 }
