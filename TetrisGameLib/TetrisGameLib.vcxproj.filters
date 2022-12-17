@@ -16,6 +16,18 @@
     <Filter Include="Controllers">
       <UniqueIdentifier>{f3284a8a-9a2c-4aae-97f9-e63e724390eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Structs">
+      <UniqueIdentifier>{5050bc3d-6b9a-4086-a775-b9630b6b591e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{f37ab232-ffb1-4294-bae6-f37f788fcb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{58f2e5d2-c2c1-4732-9ed9-7633be964a97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enums">
+      <UniqueIdentifier>{23a57548-d9cd-42e9-a52e-49669a6b5982}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -34,7 +46,19 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ColorRGB.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityCreator.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="IShape.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeEnum.h">
+      <Filter>Enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +72,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="GameMapController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityCreator.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
   </ItemGroup>

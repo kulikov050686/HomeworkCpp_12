@@ -63,6 +63,11 @@ namespace TetrisGameLib
 		std::shared_ptr<GameMapController> _gameMapController;
 
 		/// <summary>
+		/// Создатель сущностей
+		/// </summary>
+		std::shared_ptr<EntityCreator> _entityCreator;
+
+		/// <summary>
 		/// Ширина окна
 		/// </summary>
 		int _widthWindow = 0;

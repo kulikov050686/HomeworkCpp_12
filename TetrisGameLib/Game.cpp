@@ -9,6 +9,9 @@ namespace TetrisGameLib
 
 		_gameMapController = controllerLocator->GetGameMapController();
 		if(_gameMapController == nullptr) throw "Error!!!";
+
+		_entityCreator = controllerLocator->GetEntityCreator();
+		if(_entityCreator == nullptr) throw "Error!!!";
 	}
 
 	void Game::Draw()
@@ -32,6 +35,22 @@ namespace TetrisGameLib
 					{
 						ColorRGB<float> color{ 0.8f, 0.8f, 0.8f };
 						Rectangle(rectangleCoordinates, color, _shift);
+						break;
+					}
+					case 2:
+					{
+						break;
+					}
+					case 3:
+					{
+						break;
+					}
+					case 4:
+					{
+						break;
+					}
+					case 5:
+					{
 						break;
 					}
 				}
